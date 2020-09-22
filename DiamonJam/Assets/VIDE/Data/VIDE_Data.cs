@@ -791,7 +791,7 @@ namespace VIDE_Data
             foreach (SO_CharacterData t in cDatas)
             {
                 characterDatasNames.Add(t.name);
-                Debug.Log(characterDatasNames[indexx]);
+                //Debug.Log(characterDatasNames[indexx]);
                 indexx++;
             }
             // ======================================================================================
@@ -837,8 +837,8 @@ namespace VIDE_Data
                     if (characterDatasNames.Contains(name))
                     {
                         com.characterData = cDatas[characterDatasNames.IndexOf(name)];
-                        Debug.Log(com.characterData.name);
-                        Debug.Log(com.ID);
+                        //Debug.Log(com.characterData.name);
+                        //Debug.Log(com.ID);
                     }
 
                     else if (name != string.Empty)
