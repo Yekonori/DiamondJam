@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using VIDE_Data;
 using TMPro;
 
+
 public class DialogueTextManager : MonoBehaviour
 {
     [Header("Parameter")]
@@ -17,8 +18,6 @@ public class DialogueTextManager : MonoBehaviour
     TextMeshProUGUI textDialog;
     [SerializeField]
     GameObject nextButton;
-
-
 
     string actualText;
     int actualLenght = 0;
@@ -62,12 +61,6 @@ public class DialogueTextManager : MonoBehaviour
                 yield return null;
             }
 
-            if (UpdateInput() == true)
-            {
-                yield return null;
-                break;
-            }
-
             // Print new Letter
             textDialog.maxVisibleCharacters += 1;
 
@@ -77,15 +70,16 @@ public class DialogueTextManager : MonoBehaviour
         {
             yield return null;
         }
-        nextButton.gameObject.SetActive(false);
         VD.Next();
-
     }
+
+
 
     private void EndTextUpdate()
     {
         nextButton.gameObject.SetActive(true);
     }
+
 
 
     public bool UpdateInput()

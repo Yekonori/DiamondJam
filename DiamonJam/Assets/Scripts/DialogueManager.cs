@@ -15,11 +15,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     DialogueTextManager dialogueTextManager;
 
-
-    Touch touch;
-    bool pause = false;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -32,25 +27,6 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        if (VD.isActive && pause == false)
-        {
-            if (Input.touchCount > 0)
-            {
-                touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Began)
-                {
-                    VD.Next();
-                }
-            }
-            else if (Input.GetMouseButtonDown(0)) // Mettre un #if Editor à l'ocaz
-            {
-                VD.Next();
-            }
-
-        }
-    }
 
     //Every time VD.nodeData is updated, this method will be called. (Because we subscribed it to OnNodeChange event)
     void UpdateNode(VD.NodeData data)
@@ -58,18 +34,17 @@ public class DialogueManager : MonoBehaviour
 
         if(data.isPlayer) // Le node est un choix on fait appel à ChoiceManager
         {
-            pause = true; // On pause l'update de DialogueManager
             dialogueChoiceManager.UpdateNode(data);
         }
         else
         {
-            pause = true; // On pause l'update de DialogueManager
             dialogueTextManager.UpdateNode(data);
         }
     }
 
     void EndDialog(VD.NodeData data)
     {
+        Debug.Log("Allo");
         VD.OnNodeChange -= UpdateNode;
         VD.OnEnd -= EndDialog;
         VD.EndDialogue(); //Third most important method when using VIDE     
@@ -91,7 +66,6 @@ public class DialogueManager : MonoBehaviour
 
     public void Wait(float a)
     {
-        pause = true;
         StartCoroutine(WaitCoroutine(a));
 
     }
@@ -99,6 +73,5 @@ public class DialogueManager : MonoBehaviour
     {
         yield return new WaitForSeconds(t);
         VD.Next();
-        pause = false;
     }
 }

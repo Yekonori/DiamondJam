@@ -28,8 +28,7 @@ public class DialogueChoiceManager : MonoBehaviour
 
     List<DialogueChoiceButton> buttonList = new List<DialogueChoiceButton>();
 
-    //[Header("Feedback")]
-    //[SerializeField]
+
 
 
 
