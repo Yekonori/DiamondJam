@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using VIDE_Data; //à utiliser pour que le node action détecte le script
+
+
 
 public class Flash : MonoBehaviour
 {
@@ -24,7 +27,6 @@ public class Flash : MonoBehaviour
 
     private IEnumerator FlashCoroutine()
     {
-        Debug.Log("Hey");
         Color finalColor = new Color(1, 1, 1, 0);
         float t = 0f;
         while(t < 1f)
