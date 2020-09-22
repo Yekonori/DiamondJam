@@ -16,8 +16,13 @@ public class DialogueTextManager : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI textDialog;
+
+    [Header("Feedback")]
     [SerializeField]
     GameObject nextButton;
+
+    [SerializeField]
+    CharacterSpeak characterSpeak;
 
     string actualText;
     int actualLenght = 0;
@@ -53,7 +58,15 @@ public class DialogueTextManager : MonoBehaviour
                 actualText[textDialog.maxVisibleCharacters - 1] == '.' && actualText[textDialog.maxVisibleCharacters] == ' ' ||
                 actualText[textDialog.maxVisibleCharacters - 1] == '?' && actualText[textDialog.maxVisibleCharacters] == ' ' ||
                 actualText[textDialog.maxVisibleCharacters - 1] == '!' && actualText[textDialog.maxVisibleCharacters] == ' ')
+            {
+                characterSpeak.Speak(false);
                 actualTime = intervalLong;
+            }
+            else
+            {
+                characterSpeak.Speak(true);
+            }
+
 
             while (actualTime >= 0)
             {
@@ -78,6 +91,7 @@ public class DialogueTextManager : MonoBehaviour
     private void EndTextUpdate()
     {
         nextButton.gameObject.SetActive(true);
+        characterSpeak.Speak(false);
     }
 
 

@@ -27,6 +27,17 @@ public class DialogueManager : MonoBehaviour
     }
 
 
+    public void StartDialogue(string dialogue)
+    {
+        vIDE.assignedDialogue = dialogue;
+
+        VD.OnNodeChange += UpdateNode;
+        VD.OnEnd += EndDialog;
+        VD.BeginDialogue(vIDE);
+    }
+
+
+
 
     //Every time VD.nodeData is updated, this method will be called. (Because we subscribed it to OnNodeChange event)
     void UpdateNode(VD.NodeData data)
