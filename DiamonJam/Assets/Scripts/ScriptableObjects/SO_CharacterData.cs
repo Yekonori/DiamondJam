@@ -14,12 +14,12 @@ public class QuestionData
 		get { return questionID; }
 	}
 
-	[SerializeField]
+	/*[SerializeField]
 	private string questionTag;
 	public string QuestionTag
 	{
 		get { return questionTag; }
-	}
+	}*/
 
 	[SerializeField]
 	private int questionDifficulty;
@@ -42,12 +42,12 @@ public class DiscussionData
 		get { return discussionID; }
 	}
 
-	[SerializeField]
+	/*[SerializeField]
 	private string discussionTag;
 	public string DiscussionTag
 	{
 		get { return discussionTag; }
-	}
+	}*/
 }
 
 [System.Serializable]
@@ -67,12 +67,12 @@ public class DiscussionCharacterData
 		get { return discussionID; }
 	}
 
-	[SerializeField]
+	/*[SerializeField]
 	private string discussionTag;
 	public string DiscussionTag
 	{
 		get { return discussionTag; }
-	}
+	}*/
 }
 
 
@@ -103,30 +103,24 @@ public class SO_CharacterData : ScriptableObject
 		get { return characterDescription; }
 	}
 
-
-	//[Space]
-	//[Space]
-	//[Space]
-	[Header("Discussion du personnage quand le joueur lui demande de parler de lui-même")]
+	[Header("(Dialogue ID)")]
+	[Header(" Discussion du perso quand le joueur lui demande de parler de lui-même")]
+	[Space(50)]
 	[SerializeField]
 	private DiscussionData[] discussionDatas;
 	public DiscussionData[] DiscussionDatas { get; set; }
 
-
-
-	[Header("Discussion du personnage quand le joueur lui demande de parler d'un autre perso")]
+	[Header("(Character)    (Dialogue ID)")]
+	[Header(" Discussion du perso quand le joueur lui demande de parler d'un autre perso")]
+	[Space(50)]
 	[SerializeField]
 	private DiscussionCharacterData[] discussionCharacterDatas;
 	public DiscussionCharacterData[] DiscussionCharacterDatas { get; set; }
 
 
-	[Space]
-	[Space]
-	[Space]
-
-	[Header("Questions posé si le joueur porte le masque de ce personnage\n" +
-			" - Questions ID est l'identifiant du dialogue\n" +
-			" - Questions Tag est le nom de la variable pour sélectionner en priorité cette question")]
+	[Header("(Difficulté de la question)    (Dialogue ID)")]
+	[Header(" Questions posé si le joueur porte le masque de ce personnage")]
+	[Space(50)]
 	[SerializeField]
 	private QuestionData[] questionDatas;
 	public QuestionData[] QuestionDatas { get; set; }
