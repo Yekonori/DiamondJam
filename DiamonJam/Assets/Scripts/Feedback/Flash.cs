@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using VIDE_Data; //à utiliser pour que le node action détecte le script
+
+
 
 public class Flash : MonoBehaviour
 {

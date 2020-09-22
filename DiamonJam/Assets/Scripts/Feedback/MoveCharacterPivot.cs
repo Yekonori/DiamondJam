@@ -7,23 +7,8 @@ public class MoveCharacterPivot : MonoBehaviour
 
     [SerializeField]
     float speedCoroutine;
-    [SerializeField]
-    Transform newPivot;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        MoveToNewParent();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-    public void MoveToNewParent()
+    public void MoveToNewParent(Transform newPivot)
     {
         this.transform.SetParent(newPivot);
         StartCoroutine(MoveCharacterCoroutine());

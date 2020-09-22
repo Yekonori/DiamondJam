@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
     VIDE_Assign vIDE;
 
     [SerializeField]
+    DialogueChoiceManager dialogueChoiceManager;
+    [SerializeField]
     DialogueTextManager dialogueTextManager;
 
 
@@ -65,8 +67,20 @@ public class DialogueManager : MonoBehaviour
     //Every time VD.nodeData is updated, this method will be called. (Because we subscribed it to OnNodeChange event)
     void UpdateNode(VD.NodeData data)
     {
-        textDialogName.text = data.characterData.CharacterName;
-        textDialog.text = data.comments[0];
+
+        if(data.isPlayer) // Le node est un choix on fait appel à ChoiceManager
+        {
+            pause = true; // On pause l'update de DialogueManager
+            dialogueChoiceManager.UpdateNode(data);
+        }
+        else
+        {
+            //pause = true; // On pause l'update de DialogueManager
+            textDialogName.text = data.characterData.CharacterName;
+            textDialog.text = data.comments[0];
+            //dialogueTextManager.UpdateNode(data);
+        }
+        
         
         /*WipeAll(); //Turn stuff off first
 
