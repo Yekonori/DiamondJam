@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using VIDE_Data;
 
 public class DialogueChoiceManager : MonoBehaviour
@@ -16,7 +17,7 @@ public class DialogueChoiceManager : MonoBehaviour
     [SerializeField]
     float choiceInterval = 0.1f;
 
-    [Header("Feedback")]
+    /*[Header("Feedback")]
     [SerializeField]
     MoveCharacterPivot moveCharacter;
     [SerializeField]
@@ -24,22 +25,29 @@ public class DialogueChoiceManager : MonoBehaviour
     [SerializeField]
     Transform transformEnd;
     [SerializeField]
-    Animator[] feedbacks;
+    Animator[] feedbacks;*/
+
+
+    [Header("Events")]
+    [SerializeField]
+    UnityEvent eventStartChoice;
+    [SerializeField]
+    UnityEvent eventEndChoice;
+
 
     List<DialogueChoiceButton> buttonList = new List<DialogueChoiceButton>();
-
-
-
 
 
     public void UpdateNode(VD.NodeData choice)
     {
         // Feedback
-        moveCharacter.MoveToNewParent(transformStart);
+        eventStartChoice.Invoke();
+        /*moveCharacter.MoveToNewParent(transformStart);
+
         for (int i = 0; i < feedbacks.Length; i++)
         {
             feedbacks[i].SetBool("Appear", true);
-        }
+        }*/
         // ============
 
 
@@ -60,11 +68,12 @@ public class DialogueChoiceManager : MonoBehaviour
 
     private void EndNode()
     {
-        moveCharacter.MoveToNewParent(transformEnd);
+        /*moveCharacter.MoveToNewParent(transformEnd);
         for (int i = 0; i < feedbacks.Length; i++)
         {
             feedbacks[i].SetBool("Appear", false);
-        }
+        }*/
+        eventEndChoice.Invoke();
         for (int i = 0; i < buttonList.Count; i++)
         {
             buttonList[i].HideButton();
