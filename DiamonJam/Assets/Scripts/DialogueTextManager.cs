@@ -20,7 +20,8 @@ public class DialogueTextManager : MonoBehaviour
     [Header("Feedback")]
     [SerializeField]
     GameObject nextButton;
-
+    [SerializeField]
+    Animator dialogBoxFeedback;
     [SerializeField]
     CharacterSpeak characterSpeak;
 
@@ -40,6 +41,7 @@ public class DialogueTextManager : MonoBehaviour
     private IEnumerator UpdateTextCoroutine(VD.NodeData text)
     {
         // Initialization ==========================================================
+        dialogBoxFeedback.SetTrigger("Feedback");
         nextButton.gameObject.SetActive(false);
         actualText = text.comments[0];
         textDialog.text = text.comments[0];
