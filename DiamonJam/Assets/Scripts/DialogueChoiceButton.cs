@@ -19,12 +19,19 @@ public class DialogueChoiceButton : MonoBehaviour, IPointerDownHandler, IPointer
     Animator animatorChoice;
 
     [SerializeField]
-    UnityEventInt OnClickEvent; 
+    UnityEventInt OnClickEvent;
 
+    bool active = false;
     int index = 0;
+
+    public void AssignID(int id)
+    {
+        index = id;
+    }
 
     public void DrawButton(string choiceText, float delayAppear = 0f)
     {
+        active = true;
         textChoice.text = choiceText;
         StartCoroutine(ButtonAppearCoroutine(delayAppear));
     }
@@ -35,23 +42,31 @@ public class DialogueChoiceButton : MonoBehaviour, IPointerDownHandler, IPointer
     }
 
 
-
-
-    public void AssignID(int id)
+    public void HideButton()
     {
-        index = id;
+        active = false;
+        animatorChoice.SetBool("Appear", false);
     }
+
+
 
 
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        //Debug.Log("Mouse Down: " + eventData.pointerCurrentRaycast.gameObject.name);
+        if (active == true)
+        {
+            animatorChoice.SetTrigger("PointerDown");
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        OnClickEvent.Invoke(index);
+        if (active == true)
+        {
+            animatorChoice.SetTrigger("PointerUp");
+            OnClickEvent.Invoke(index);
+        }
     }
 
 

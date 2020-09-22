@@ -68,7 +68,8 @@ public class DialogueChoiceManager : MonoBehaviour
         }
         for (int i = 0; i < buttonList.Count; i++)
         {
-            buttonList[i].gameObject.SetActive(false);
+            buttonList[i].HideButton();
+            //buttonList[i].gameObject.SetActive(false);
         }
     }
 

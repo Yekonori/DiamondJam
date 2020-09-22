@@ -27,7 +27,6 @@ public class Flash : MonoBehaviour
 
     private IEnumerator FlashCoroutine()
     {
-        Debug.Log("Hey");
         Color finalColor = new Color(1, 1, 1, 0);
         float t = 0f;
         while(t < 1f)
