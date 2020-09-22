@@ -16,18 +16,6 @@ public class DialogueManager : MonoBehaviour
     DialogueTextManager dialogueTextManager;
 
 
-
-
-
-
-
-
-    [Header("Debug")]
-    [SerializeField]
-    TextMeshProUGUI textDialogName;
-    [SerializeField]
-    TextMeshProUGUI textDialog;
-
     Touch touch;
     bool pause = false;
 
@@ -48,7 +36,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (VD.isActive && pause == false)
         {
-            if (Input.touchCount > 0) // Pas définitif si on met des boutons sur l'interface
+            if (Input.touchCount > 0)
             {
                 touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Began)
@@ -75,37 +63,9 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            //pause = true; // On pause l'update de DialogueManager
-            textDialogName.text = data.characterData.CharacterName;
-            textDialog.text = data.comments[0];
-            //dialogueTextManager.UpdateNode(data);
+            pause = true; // On pause l'update de DialogueManager
+            dialogueTextManager.UpdateNode(data);
         }
-        
-        
-        /*WipeAll(); //Turn stuff off first
-
-        if (!data.isPlayer) //For NPC. Activate text gameobject and set its text
-        {
-            NPC_text.gameObject.SetActive(true);
-            NPC_text.text = data.comments[data.commentIndex];
-        }
-        else //For Player. It will activate the required Buttons and set their text
-        {
-            for (int i = 0; i < PLAYER_text.Length; i++)
-            {
-                if (i < data.comments.Length)
-                {
-                    PLAYER_text[i].transform.parent.gameObject.SetActive(true);
-                    PLAYER_text[i].text = data.comments[i];
-                }
-                else
-                {
-                    PLAYER_text[i].transform.parent.gameObject.SetActive(false);
-                }
-
-                PLAYER_text[0].transform.parent.GetComponent<Button>().Select();
-            }
-        }*/
     }
 
     void EndDialog(VD.NodeData data)
@@ -115,8 +75,8 @@ public class DialogueManager : MonoBehaviour
         VD.EndDialogue(); //Third most important method when using VIDE     
 
         // Clean des trucs
-        textDialogName.text = "";
-        textDialog.text = "";
+        //textDialogName.text = "";
+        //textDialog.text = "";
     }
 
 
