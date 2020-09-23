@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   characterModel: {fileID: 0}
+  characterBackground: {fileID: 0}
   characterDescription: 
-  discussionDatas: []
-  discussionCharacterDatas: []
+  discussionCharacterDatas:
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Elephant-Chat
+    discussionTag: Rouge
   questionDatas: []

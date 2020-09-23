@@ -14,61 +14,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Lapin
   characterModel: {fileID: 0}
+  characterBackground: {fileID: 0}
   characterDescription: 
-  discussionDatas:
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
   discussionCharacterDatas:
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Lapin-Chat
+    discussionTag: 
   questionDatas:
   - questionID: LapinQuestion1-1
     questionDifficulty: 1
+    questionTag: 
   - questionID: LapinQuestion1-2
     questionDifficulty: 2
+    questionTag: 
   - questionID: LapinQuestion1-3
     questionDifficulty: 3
+    questionTag: 
   - questionID: LapinQuestion2-1
     questionDifficulty: 1
+    questionTag: 
   - questionID: LapinQuestion2-2
     questionDifficulty: 2
+    questionTag: 
   - questionID: LapinQuestion2-3
     questionDifficulty: 3
+    questionTag: 
   - questionID: LapinQuestion3-1
     questionDifficulty: 1
+    questionTag: 
   - questionID: LapinQuestion3-2
     questionDifficulty: 2
+    questionTag: 
   - questionID: LapinQuestion3-3
     questionDifficulty: 3
+    questionTag: 
   - questionID: LapinQuestion4-1
     questionDifficulty: 1
+    questionTag: 
   - questionID: LapinQuestion4-2
     questionDifficulty: 2
+    questionTag: 
   - questionID: LapinQuestion4-3
     questionDifficulty: 3
+    questionTag: 
