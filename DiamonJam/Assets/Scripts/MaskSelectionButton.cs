@@ -7,6 +7,8 @@ public class MaskSelectionButton : MonoBehaviour
 {
     [SerializeField]
     Image imageMask;
+
+
     int index;
 
     [SerializeField]
