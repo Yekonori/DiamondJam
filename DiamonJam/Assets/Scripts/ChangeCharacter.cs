@@ -16,6 +16,7 @@ public class ChangeCharacter : MonoBehaviour
     #endregion
 
     #region Fields
+    public Transform whereToInstanciate;
 
     private float swipeDistanceThreshold = 50;
 
@@ -23,7 +24,7 @@ public class ChangeCharacter : MonoBehaviour
     private Vector2 endPosition;
 
     [SerializeField] bool isChoosingNPC = true;
-    private List<ScriptableObject> players;
+    private List<SO_CharacterData> players;
     private int currentPlayerId;
     private GameObject currentPlayer;
 
@@ -120,7 +121,9 @@ public class ChangeCharacter : MonoBehaviour
             }
         }
 
+        if (currentPlayer != null) Destroy(currentPlayer);
 
+        currentPlayer = Instantiate(players[currentPlayerId].CharacterModel, whereToInstanciate);
         //players[currentPlayerId].gameObject.SetActive(true);
         //currentPlayer = players[currentPlayerId].gameObject;
     }
@@ -143,9 +146,17 @@ public class ChangeCharacter : MonoBehaviour
         //}
     }
 
-    public void InitListGuests(List<ScriptableObject> list)
+    public void InitListGuests(List<SO_CharacterData> list)
     {
         players = list;
+        currentPlayerId = 0;
+        currentPlayer = Instantiate(players[currentPlayerId].CharacterModel, whereToInstanciate);
+
+    }
+
+    public SO_CharacterData GetCurrentNP_SO()
+    {
+        return players[currentPlayerId];
     }
 
     #endregion

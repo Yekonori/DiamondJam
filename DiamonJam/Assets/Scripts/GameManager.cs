@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     DialogueManager dialogueManager;
     [SerializeField]
-    Swipe swipeManager;
+    ChangeCharacter swipeManager;
     [SerializeField]
     MaskSelectionManager maskSelectionManager;
     [SerializeField]
@@ -172,13 +172,14 @@ public class GameManager : MonoBehaviour
     // ================================================================================================================================== //
     public void StartSwipe()
     {
-        // StartSwipe
+        swipeManager.InitListGuests(guestsList);
     }
 
 
     public void EndSwipe()
     {
-        //currentInterlocutor = swipeManager.a     
+        currentInterlocutor = swipeManager.GetCurrentNP_SO();
+        swipeManager.ChangeChoosingMode(false);
         StartDiscussionPhase();
     }
 

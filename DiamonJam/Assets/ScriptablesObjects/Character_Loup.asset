@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Character_Loup
   m_EditorClassIdentifier: 
   characterName: Loup
-  characterModel: {fileID: 0}
+  characterModel: {fileID: 919132149155446097, guid: 1486f8a0c2166254fbdb53e3d9bae8b6,
+    type: 3}
   characterMask: {fileID: 21300000, guid: 66db6cef48f135b428493e43cfd2e8b9, type: 3}
   characterBackground: {fileID: 0}
   characterDescription: 

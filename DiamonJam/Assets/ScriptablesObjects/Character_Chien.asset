@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Character_Chien
   m_EditorClassIdentifier: 
   characterName: Chien
-  characterModel: {fileID: 0}
+  characterModel: {fileID: 919132149155446097, guid: 6cfc01147b8f48b49bcc8363a4ec1b61,
+    type: 3}
   characterMask: {fileID: 21300000, guid: 3467deba7401cf448bae9410191c3681, type: 3}
   characterBackground: {fileID: 0}
   characterDescription: 

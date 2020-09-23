@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Character_Elephant
   m_EditorClassIdentifier: 
   characterName: 
-  characterModel: {fileID: 0}
+  characterModel: {fileID: 919132149155446097, guid: 87fcd266993b7f84f9bf036b2072be8a,
+    type: 3}
   characterMask: {fileID: 21300000, guid: 11f65e3ae0cbdcf46a4ad76db234b658, type: 3}
   characterBackground: {fileID: 0}
   characterDescription: 

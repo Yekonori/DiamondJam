@@ -1430,6 +1430,7 @@ MonoBehaviour:
   vIDE: {fileID: 319636131}
   dialogueChoiceManager: {fileID: 0}
   dialogueTextManager: {fileID: 0}
+  dialogueMenu: {fileID: 0}
 --- !u!114 &319636131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4481,7 +4482,14 @@ MonoBehaviour:
   dialoguePanel: {fileID: 2102785772}
   chooseNPCPanel: {fileID: 847827873}
   dialogueManager: {fileID: 2075097184}
+  whereToInstanciate: {fileID: 798502620}
   isChoosingNPC: 1
+  players:
+  - {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
+  - {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+  - {fileID: 11400000, guid: 9e0f6c15c337d324a95cb62ffcf54c92, type: 2}
+  - {fileID: 11400000, guid: 277e442620a65304fa91d969abf93cac, type: 2}
+  - {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
 --- !u!4 &1411237493
 Transform:
   m_ObjectHideFlags: 0
@@ -5086,7 +5094,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b0d471aee451b92409afab5d0afd4e7c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0d471aee451b92409afab5d0afd4e7c, type: 3}
@@ -6725,6 +6733,7 @@ MonoBehaviour:
   vIDE: {fileID: 2075097187}
   dialogueChoiceManager: {fileID: 597994627}
   dialogueTextManager: {fileID: 71430390}
+  dialogueMenu: {fileID: 0}
 --- !u!114 &2075097187
 MonoBehaviour:
   m_ObjectHideFlags: 0
