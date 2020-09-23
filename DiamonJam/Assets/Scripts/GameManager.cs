@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         else
         {
             // Go To Character Selection
-            
+            StartDiscussionPhase();
         }
         murderPreviousTurn = false;
     }
@@ -196,11 +196,14 @@ public class GameManager : MonoBehaviour
     GameObject murderPanel;
 
 
-    //   CHOIX DU MEURTRE   =================================================================================================================================================
+    // ================================================================================================================================== //
+    //   CHOIX DU MEURTRE 
+    // ================================================================================================================================== //
     private void StartMurderSelection()
     {
         murderPanel.gameObject.SetActive(true);
     }
+
     public void Kill()
     {
         guestsList.Remove(currentInterlocutor);
@@ -208,16 +211,18 @@ public class GameManager : MonoBehaviour
         murderPreviousTurn = true;
         StartNewTurn();
     }
+
     public void Spare()
     {
         StartCoroutine(SpareCoroutine());
     }
 
-
     private IEnumerator SpareCoroutine()
     {
         yield return new WaitForSeconds(2f);
         StartNewTurn();
+        yield return new WaitForSeconds(1f);
+        murderPanel.gameObject.SetActive(false);
     }
 
     // ======================================================================================================================================================================
