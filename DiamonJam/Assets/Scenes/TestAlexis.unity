@@ -4478,7 +4478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120e75665fca11e45903c054c64e191b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersField: {fileID: 798502619}
   dialoguePanel: {fileID: 2102785772}
   chooseNPCPanel: {fileID: 847827873}
   dialogueManager: {fileID: 2075097184}

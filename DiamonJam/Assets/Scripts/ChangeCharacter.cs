@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Swipe : MonoBehaviour
+public class ChangeCharacter : MonoBehaviour
 {
     #region Script Parameters
 
-    public GameObject playersField;
+    //public GameObject playersField;
+    
     public GameObject dialoguePanel;
     public GameObject chooseNPCPanel;
     public GameObject dialogueManager;
@@ -22,7 +23,7 @@ public class Swipe : MonoBehaviour
     private Vector2 endPosition;
 
     [SerializeField] bool isChoosingNPC = true;
-    private List<Transform> players;
+    private List<ScriptableObject> players;
     private int currentPlayerId;
     private GameObject currentPlayer;
 
@@ -33,15 +34,15 @@ public class Swipe : MonoBehaviour
 
     private void Start()
     {
-        players = new List<Transform>();
+        //players = new List<Transform>();
 
-        foreach(Transform transform in playersField.transform)
-        {
-            players.Add(transform);
-        }
+        //foreach(Transform transform in playersField.transform)
+        //{
+        //    players.Add(transform);
+        //}
 
         currentPlayerId = 0;
-        currentPlayer = players[currentPlayerId].gameObject;
+        //currentPlayer = players[currentPlayerId].gameObject;
     }
 
     private void Update()
@@ -82,7 +83,7 @@ public class Swipe : MonoBehaviour
 
     private void SwipePlayer(bool toRight)
     {
-        players[currentPlayerId].gameObject.SetActive(false);
+        //players[currentPlayerId].gameObject.SetActive(false);
 
         /**
          * IF true : 
@@ -120,8 +121,8 @@ public class Swipe : MonoBehaviour
         }
 
 
-        players[currentPlayerId].gameObject.SetActive(true);
-        currentPlayer = players[currentPlayerId].gameObject;
+        //players[currentPlayerId].gameObject.SetActive(true);
+        //currentPlayer = players[currentPlayerId].gameObject;
     }
 
 
@@ -129,19 +130,23 @@ public class Swipe : MonoBehaviour
     {
         //Debug.Log("Button push");
         isChoosingNPC = b;
-        if (isChoosingNPC)
-        {
-            chooseNPCPanel.SetActive(true);
-            dialoguePanel.SetActive(false);
-        }
-        else
-        {
-            chooseNPCPanel.SetActive(false);
-            dialoguePanel.SetActive(true);
-            dialogueManager.GetComponent<DialogueManager>().StartDialogue("TestNam");
-        }
+        //if (isChoosingNPC)
+        //{
+        //    chooseNPCPanel.SetActive(true);
+        //    dialoguePanel.SetActive(false);
+        //}
+        //else
+        //{
+        //    chooseNPCPanel.SetActive(false);
+        //    dialoguePanel.SetActive(true);
+        //    dialogueManager.GetComponent<DialogueManager>().StartDialogue("TestNam");
+        //}
     }
 
+    public void InitListGuests(List<ScriptableObject> list)
+    {
+        players = list;
+    }
 
     #endregion
 }
