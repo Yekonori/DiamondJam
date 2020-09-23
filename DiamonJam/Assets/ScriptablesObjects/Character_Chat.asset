@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Chat
   characterModel: {fileID: 0}
-  characterMask: {fileID: 21300000, guid: 9e5eefef3b3fdff40a66f9c9db42ac9e, type: 3}
+  characterMask: {fileID: 21300000, guid: 665f439c35752094dbc2384dd8cbd4a2, type: 3}
   characterBackground: {fileID: 0}
   characterDescription: 
   discussionCharacterDatas:

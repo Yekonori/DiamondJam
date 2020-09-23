@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public enum GameState
@@ -36,6 +37,18 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     DialogueSelectorManager dialogueSelectorManager;
 
+    [Header("HUD")]
+    [SerializeField]
+    Transform guestTransform;
+    [SerializeField]
+    Image imageGuestPrefab;
+    [SerializeField]
+    Image imageCurrentMask;
+    [SerializeField]
+    TMPro.TextMeshProUGUI textTurn;
+
+    List<Image> imageGuests = new List<Image>();
+
     [Header("Debug")]
     [SerializeField]
     SO_CharacterData debugInterlocutor;
@@ -63,7 +76,8 @@ public class GameManager : MonoBehaviour
     private void StartNewTurn()
     {
         turn -= 2;
-        if(murderPreviousTurn == true)
+        DrawHUD();
+        if (murderPreviousTurn == true)
         {
             // Go To Interrogation
             StartCoroutine(StartQuestionCoroutine());
@@ -77,7 +91,36 @@ public class GameManager : MonoBehaviour
         murderPreviousTurn = false;
     }
 
+    private void DrawHUD()
+    {
+        imageCurrentMask.sprite = currentMask.CharacterMask;
+        for (int i = 0; i < guestsList.Count; i++)
+        {
+            if(imageGuests.Count <= i)
+            {
+                imageGuests.Add(Instantiate(imageGuestPrefab, guestTransform));
+            }
+            imageGuests[i].gameObject.SetActive(true);
+            imageGuests[i].sprite = guestsList[i].CharacterMask;
+        }
+        for (int i = guestsList.Count; i < imageGuests.Count; i++)
+        {
+            imageGuests[i].gameObject.SetActive(false);
+        }
+        DrawNewTurn();
 
+    }
+
+    private void DrawNewTurn()
+    {
+        string hour = (turn / 2) + "h";
+        if (turn % 2 != 0)
+        {
+            Debug.Log("Allo");
+            hour = hour + "30";
+        }
+        textTurn.text = hour;
+    }
 
 
 
@@ -105,6 +148,7 @@ public class GameManager : MonoBehaviour
         if (currentInterogationNumber <= 0) // Plus de question, on passe à la sélection
         {
             dialogueManager.OnDialogueEnd -= EndQuestion;
+            StartDiscussionPhase();
         }
         else // Encore des questions 
         {
@@ -171,6 +215,7 @@ public class GameManager : MonoBehaviour
 
     public void EndDiscussion()
     {
+        DrawNewTurn();
         turn -= 1;
         StartDiscussionSelection();
     }
@@ -209,8 +254,18 @@ public class GameManager : MonoBehaviour
         guestsList.Remove(currentInterlocutor);
         currentMask = currentInterlocutor;
         murderPreviousTurn = true;
-        StartNewTurn();
+        moveCharacterPivot.MoveToNewParent(characterPositionDead, 500);
+        StartCoroutine(KillCoroutine());
     }
+    private IEnumerator KillCoroutine()
+    {
+        yield return new WaitForSeconds(6.4f);
+        moveCharacterPivot.MoveToNewParent(characterPositionDefault, 1);
+        StartNewTurn();
+        yield return new WaitForSeconds(1.1f);
+        murderPanel.gameObject.SetActive(false);
+    }
+
 
     public void Spare()
     {
@@ -243,6 +298,14 @@ public class GameManager : MonoBehaviour
     Animator zawa2;
     [SerializeField]
     GameObject gameOverPanel;
+    [SerializeField]
+    MoveCharacterPivot moveCharacterPivot;
+    [SerializeField]
+    Transform characterPositionDefault;
+    [SerializeField]
+    Transform characterPositionGameOver;
+    [SerializeField]
+    Transform characterPositionDead;
 
     public void LoseHealth()
     {
@@ -265,6 +328,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        moveCharacterPivot.MoveToNewParent(characterPositionGameOver);
         dialogueManager.OnDialogueEnd += GameOverAnimation;
         dialogueManager.StartDialogue(gameOverDialog);
 

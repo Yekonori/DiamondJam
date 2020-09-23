@@ -15,21 +15,33 @@ public class MoveCharacterPivot : MonoBehaviour
         this.transform.SetParent(newPivot);
         if (moveCharacterCoroutine != null)
             StopCoroutine(moveCharacterCoroutine);
-        moveCharacterCoroutine = MoveCharacterCoroutine();
+        moveCharacterCoroutine = MoveCharacterCoroutine(speedCoroutine);
         StartCoroutine(moveCharacterCoroutine);
     }
 
-    private IEnumerator MoveCharacterCoroutine()
+    private IEnumerator MoveCharacterCoroutine(float speed)
     {
         Vector3 originPosition = Vector3.zero;
         Quaternion zero = Quaternion.Euler(0, 0, 0);
         float t = 0f;
         while (t < 1f)
         {
-            t += Time.deltaTime / speedCoroutine;
+            t += Time.deltaTime / speed;
             this.transform.localRotation = Quaternion.Slerp(this.transform.localRotation, zero, t);
             this.transform.localPosition = Vector3.Lerp(this.transform.localPosition, originPosition, t);
             yield return null;
         }
     }
+
+
+
+    public void MoveToNewParent(Transform newPivot, float speed)
+    {
+        this.transform.SetParent(newPivot);
+        if (moveCharacterCoroutine != null)
+            StopCoroutine(moveCharacterCoroutine);
+        moveCharacterCoroutine = MoveCharacterCoroutine(speed);
+        StartCoroutine(moveCharacterCoroutine);
+    }
+
 }

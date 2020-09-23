@@ -25,11 +25,6 @@ public class DialogueManager : MonoBehaviour
 
     public event Action OnDialogueEnd;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
 
     public void StartDialogue(string dialogue)
