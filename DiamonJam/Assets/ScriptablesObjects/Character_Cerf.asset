@@ -14,7 +14,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   characterModel: {fileID: 0}
+  characterBackground: {fileID: 0}
   characterDescription: 
-  discussionDatas: []
-  discussionCharacterDatas: []
-  questionDatas: []
+  discussionDatas:
+  - discussionID: 
+  - discussionID: 
+  - discussionID: 
+  - discussionID: 
+  - discussionID: 
+  - discussionID: 
+  - discussionID: 
+  - discussionID: 
+  - discussionID: 
+  - discussionID: 
+  discussionCharacterDatas:
+  - characterData: {fileID: 0}
+    discussionID: 
+  - characterData: {fileID: 0}
+    discussionID: 
+  - characterData: {fileID: 0}
+    discussionID: 
+  - characterData: {fileID: 0}
+    discussionID: 
+  - characterData: {fileID: 0}
+    discussionID: 
+  - characterData: {fileID: 0}
+    discussionID: 
+  - characterData: {fileID: 0}
+    discussionID: 
+  - characterData: {fileID: 0}
+    discussionID: 
+  - characterData: {fileID: 0}
+    discussionID: 
+  - characterData: {fileID: 0}
+    discussionID: 
+  questionDatas:
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 

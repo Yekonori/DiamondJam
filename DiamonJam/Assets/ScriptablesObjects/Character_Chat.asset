@@ -12,9 +12,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2630c079ea520b418f774c2159c7e9a, type: 3}
   m_Name: Character_Chat
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Chat
   characterModel: {fileID: 0}
+  characterBackground: {fileID: 0}
   characterDescription: 
-  discussionDatas: []
-  discussionCharacterDatas: []
-  questionDatas: []
+  discussionCharacterDatas:
+  - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
+    discussionID: Chat-Cerf
+    discussionTag: Rouge
+  - characterData: {fileID: 11400000, guid: 9e0f6c15c337d324a95cb62ffcf54c92, type: 2}
+    discussionID: Chat-Chien
+    discussionTag: 
+  - characterData: {fileID: 11400000}
+    discussionID: Chat-Chat
+    discussionTag: Rouge
+  - characterData: {fileID: 11400000, guid: 277e442620a65304fa91d969abf93cac, type: 2}
+    discussionID: Chat-Elephant
+    discussionTag: Elephant est trans
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  questionDatas:
+  - questionID: QuestionChat1
+    questionDifficulty: 1
+    questionTag: Rouge
+  - questionID: QuestionChat2
+    questionDifficulty: 1
+    questionTag: Bleu
+  - questionID: QuestionChat3
+    questionDifficulty: 1
+    questionTag: Elephant est trans
+  - questionID: QuestionChat4
+    questionDifficulty: 1
+    questionTag: 
+  - questionID: QuestionChat1-2
+    questionDifficulty: 2
+    questionTag: 
+  - questionID: QuestionChat2-2
+    questionDifficulty: 2
+    questionTag: 
+  - questionID: QuestionChat3-2
+    questionDifficulty: 2
+    questionTag: 
+  - questionID: QuestionChat4-2
+    questionDifficulty: 2
+    questionTag: 
+  - questionID: QuestionChat1-3
+    questionDifficulty: 3
+    questionTag: 
+  - questionID: QuestionChat2-3
+    questionDifficulty: 3
+    questionTag: 
+  - questionID: QuestionChat3-3
+    questionDifficulty: 3
+    questionTag: 
+  - questionID: QuestionChat4-3
+    questionDifficulty: 3
+    questionTag: 

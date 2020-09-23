@@ -14,18 +14,18 @@ public class QuestionData
 		get { return questionID; }
 	}
 
-	/*[SerializeField]
-	private string questionTag;
-	public string QuestionTag
-	{
-		get { return questionTag; }
-	}*/
-
 	[SerializeField]
 	private int questionDifficulty;
 	public int QuestionDifficulty
 	{
 		get { return questionDifficulty; }
+	}
+
+	[SerializeField]
+	private string questionTag;
+	public string QuestionTag
+	{
+		get { return questionTag; }
 	}
 }
 
@@ -67,12 +67,12 @@ public class DiscussionCharacterData
 		get { return discussionID; }
 	}
 
-	/*[SerializeField]
+	[SerializeField]
 	private string discussionTag;
 	public string DiscussionTag
 	{
 		get { return discussionTag; }
-	}*/
+	}
 }
 
 
@@ -95,6 +95,13 @@ public class SO_CharacterData : ScriptableObject
 		get { return characterModel; }
 	}
 
+	[SerializeField]
+	private Sprite characterBackground;
+	public Sprite CharacterBackground
+	{
+		get { return characterBackground; }
+	}
+
 	[TextArea()]
 	[SerializeField]
 	private string characterDescription;
@@ -103,14 +110,14 @@ public class SO_CharacterData : ScriptableObject
 		get { return characterDescription; }
 	}
 
-	[Header("(Dialogue ID)")]
+	/*[Header("(Dialogue ID)")]
 	[Header(" Discussion du perso quand le joueur lui demande de parler de lui-même")]
 	[Space(50)]
 	[SerializeField]
 	private DiscussionData[] discussionDatas;
-	public DiscussionData[] DiscussionDatas { get; set; }
+	public DiscussionData[] DiscussionDatas { get; set; }*/
 
-	[Header("(Character)    (Dialogue ID)")]
+	[Header("(Character)    (Dialogue ID)    (Dialogue Tag)")]
 	[Header(" Discussion du perso quand le joueur lui demande de parler d'un autre perso")]
 	[Space(50)]
 	[SerializeField]
@@ -118,7 +125,7 @@ public class SO_CharacterData : ScriptableObject
 	public DiscussionCharacterData[] DiscussionCharacterDatas { get; set; }
 
 
-	[Header("(Difficulté de la question)    (Dialogue ID)")]
+	[Header("(Difficulté de la question)    (Dialogue ID)     (Dialogue Tag)")]
 	[Header(" Questions posé si le joueur porte le masque de ce personnage")]
 	[Space(50)]
 	[SerializeField]
