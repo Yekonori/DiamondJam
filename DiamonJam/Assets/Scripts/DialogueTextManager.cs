@@ -117,15 +117,6 @@ public class DialogueTextManager : MonoBehaviour
 
     private void EndNode()
     {
-        /*moveCharacter.MoveToNewParent(transformEnd);
-        for (int i = 0; i < feedbacks.Length; i++)
-        {
-            feedbacks[i].SetBool("Appear", false);
-        }
-        for (int i = 0; i < buttonList.Count; i++)
-        {
-            buttonList[i].HideButton();
-            //buttonList[i].gameObject.SetActive(false);
-        }*/
+        
     }
 }

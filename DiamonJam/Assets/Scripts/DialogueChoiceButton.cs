@@ -35,17 +35,19 @@ public class DialogueChoiceButton : MonoBehaviour, IPointerDownHandler, IPointer
         textChoice.text = choiceText;
         StartCoroutine(ButtonAppearCoroutine(delayAppear));
     }
+
     private IEnumerator ButtonAppearCoroutine(float delayAppear)
     {
         yield return new WaitForSeconds(delayAppear);
-        animatorChoice.SetBool("Appear", true);
+        animatorChoice.ResetTrigger("Disappear");
+        animatorChoice.SetTrigger("Appear");
     }
 
 
     public void HideButton()
     {
         active = false;
-        animatorChoice.SetBool("Appear", false);
+        animatorChoice.SetTrigger("Disappear");
     }
 
 

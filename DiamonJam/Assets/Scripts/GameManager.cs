@@ -16,9 +16,9 @@ public class GameManager : MonoBehaviour
 {
     [Header("Parameter")]
     [SerializeField]
-    private int turn = 20;
+    private int turn = 40;
     [SerializeField]
-    private int discussionNumber = 2;
+    private int playerHealth = 2;
     [SerializeField]
     private int interogationNumber = 3;
 
@@ -40,10 +40,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     SO_CharacterData debugInterlocutor;
 
+    [SerializeField]
     private bool murderPreviousTurn = false;
 
     private int currentDiscussionNumber = 2;
     private int currentInterogationNumber = 3;
+
+    private int currentPlayerHealth;
 
 
     SO_CharacterData currentMask;
@@ -51,22 +54,20 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
-        dialogueManager.OnDialogueEnd += EndDiscussion;
-
+        currentMask = debugInterlocutor;
         currentInterlocutor = debugInterlocutor;
-        StartDiscussionSelection();
-        //StartNewTurn();
+        StartNewTurn();
     }
 
 
     private void StartNewTurn()
     {
-        turn -= 1;
+        turn -= 2;
         if(murderPreviousTurn == true)
         {
             // Go To Interrogation
-            StartQuestion();
+            StartCoroutine(StartQuestionCoroutine());
+            //StartQuestion();
         }
         else
         {
@@ -80,7 +81,17 @@ public class GameManager : MonoBehaviour
 
 
 
-    //   INTERROGATION   =================================================================================================================================================
+    // ================================================================================================================================== //
+    //   INTERROGATION  
+    // ================================================================================================================================== //
+    private IEnumerator StartQuestionCoroutine()
+    {
+        yield return new WaitForSeconds(2f);
+        dialogueManager.OnDialogueEnd += EndQuestion;
+        currentPlayerHealth = playerHealth;
+        StartQuestion();
+    }
+
     public void StartQuestion()
     {
         string dialog = dialogueSelectorManager.SelectQuestion(currentMask);
@@ -93,16 +104,14 @@ public class GameManager : MonoBehaviour
         currentInterogationNumber -= 1;
         if (currentInterogationNumber <= 0) // Plus de question, on passe à la sélection
         {
-
+            dialogueManager.OnDialogueEnd -= EndQuestion;
         }
         else // Encore des questions 
         {
             StartQuestion();
         }
     }
-
-    // ======================================================================================================================================================================
-
+    // ================================================================================================================================== //
 
 
 
@@ -110,7 +119,43 @@ public class GameManager : MonoBehaviour
 
 
 
-    //   DISCUSSION   =================================================================================================================================================
+
+    // ================================================================================================================================== //
+    //   SELECTION PERSO 
+    // ================================================================================================================================== //
+    public void StartSwipe()
+    {
+        // StartSwipe
+    }
+
+
+    public void EndSwipe()
+    {
+        //currentInterlocutor = swipeManager.a     
+        StartDiscussionPhase();
+    }
+
+    // ================================================================================================================================== //
+
+
+
+
+
+
+
+
+
+
+
+    // ================================================================================================================================== //
+    //   DISCUSSION  
+    // ================================================================================================================================== //
+    private void StartDiscussionPhase()
+    {
+        dialogueManager.OnDialogueEnd += EndDiscussion;
+        StartDiscussionSelection();
+    }
+
     private void StartDiscussionSelection()
     {
         maskSelectionManager.StartSelection(guestsList);
@@ -124,25 +169,21 @@ public class GameManager : MonoBehaviour
         dialogueManager.StartDialogue(dialog);
     }
 
+    public void EndDiscussion()
+    {
+        turn -= 1;
+        StartDiscussionSelection();
+    }
+
     // Call by bouton sur une scene
     public void CancelDiscussion()
     {
+        dialogueManager.OnDialogueEnd -= EndDiscussion;
         maskSelectionManager.EndSelection();
         StartMurderSelection();
     }
 
-    public void EndDiscussion()
-    {
-        currentDiscussionNumber -= 1;
-        if(currentDiscussionNumber <= 0) // Plus de discussion, go to choix du meurte
-        {
-            CancelDiscussion();
-        }
-        else // Encore des discussion à faire, on retourne au menu précédent
-        {
-            StartDiscussionSelection();
-        }
-    }
+
     // ======================================================================================================================================================================
 
 
@@ -180,4 +221,64 @@ public class GameManager : MonoBehaviour
     }
 
     // ======================================================================================================================================================================
+
+
+
+
+    [Header("GameOver")]
+    [SerializeField]
+    string gameOverDialog;
+    [SerializeField]
+    Shake shakeScreen;
+    [SerializeField]
+    Flash flashRedBackground;
+    [SerializeField]
+    Animator zawa;
+    [SerializeField]
+    Animator zawa2;
+    [SerializeField]
+    GameObject gameOverPanel;
+
+    public void LoseHealth()
+    {
+        flashRedBackground.StartFlash();
+        shakeScreen.ShakeEffect();
+
+        currentPlayerHealth -= 1;
+        if (currentPlayerHealth <= 0) 
+        {
+            dialogueManager.OnDialogueEnd -= EndQuestion;
+            dialogueManager.InterruptDialog();
+            GameOver();
+        }
+        else
+        {
+            zawa.SetTrigger("Feedback");
+            zawa2.SetTrigger("Feedback");
+        }
+    }
+
+    public void GameOver()
+    {
+        dialogueManager.OnDialogueEnd += GameOverAnimation;
+        dialogueManager.StartDialogue(gameOverDialog);
+
+    }
+
+    public void GameOverAnimation()
+    {
+        gameOverPanel.SetActive(true);
+        StartCoroutine(GameOverCoroutine());
+    }
+
+    private IEnumerator GameOverCoroutine()
+    {
+        yield return new WaitForSeconds(8f);
+        // Load scene
+    }
+
+
+
+
+
 }

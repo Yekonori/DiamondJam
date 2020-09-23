@@ -63,6 +63,7 @@ public class DialogueSelectorManager : MonoBehaviour
 
     public string SelectQuestion(SO_CharacterData maskWorn)
     {
+        Debug.Log(maskWorn.name);
         for (int i = 0; i < maskWorn.QuestionDatas.Length; i++)
         {
             for (int j = 0; j < playerKnowledge.Count; j++)

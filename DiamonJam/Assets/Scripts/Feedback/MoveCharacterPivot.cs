@@ -8,10 +8,15 @@ public class MoveCharacterPivot : MonoBehaviour
     [SerializeField]
     float speedCoroutine;
 
+    private IEnumerator moveCharacterCoroutine;
+
     public void MoveToNewParent(Transform newPivot)
     {
         this.transform.SetParent(newPivot);
-        StartCoroutine(MoveCharacterCoroutine());
+        if (moveCharacterCoroutine != null)
+            StopCoroutine(moveCharacterCoroutine);
+        moveCharacterCoroutine = MoveCharacterCoroutine();
+        StartCoroutine(moveCharacterCoroutine);
     }
 
     private IEnumerator MoveCharacterCoroutine()

@@ -25,39 +25,6 @@ MonoBehaviour:
     discussionID: TestNam
     discussionTag: Zbla
   questionDatas:
-  - questionID: LapinQuestion1-1
+  - questionID: TestNam
     questionDifficulty: 1
-    questionTag: 
-  - questionID: LapinQuestion1-2
-    questionDifficulty: 2
-    questionTag: 
-  - questionID: LapinQuestion1-3
-    questionDifficulty: 3
-    questionTag: 
-  - questionID: LapinQuestion2-1
-    questionDifficulty: 1
-    questionTag: 
-  - questionID: LapinQuestion2-2
-    questionDifficulty: 2
-    questionTag: 
-  - questionID: LapinQuestion2-3
-    questionDifficulty: 3
-    questionTag: 
-  - questionID: LapinQuestion3-1
-    questionDifficulty: 1
-    questionTag: 
-  - questionID: LapinQuestion3-2
-    questionDifficulty: 2
-    questionTag: 
-  - questionID: LapinQuestion3-3
-    questionDifficulty: 3
-    questionTag: 
-  - questionID: LapinQuestion4-1
-    questionDifficulty: 1
-    questionTag: 
-  - questionID: LapinQuestion4-2
-    questionDifficulty: 2
-    questionTag: 
-  - questionID: LapinQuestion4-3
-    questionDifficulty: 3
     questionTag: 
