@@ -35,7 +35,6 @@ public class DialogueSelectorManager : MonoBehaviour
     {
         if (interlocutor.DiscussionCharacterDatas.Length == 0)
             return null;
-
         DiscussionCharacterData discussion = null;
         for (int i = 0; i < interlocutor.DiscussionCharacterDatas.Length; i++)
         {

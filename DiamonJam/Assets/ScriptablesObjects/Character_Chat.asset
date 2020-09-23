@@ -14,21 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Chat
   characterModel: {fileID: 0}
+  characterMask: {fileID: 21300000, guid: 9e5eefef3b3fdff40a66f9c9db42ac9e, type: 3}
   characterBackground: {fileID: 0}
   characterDescription: 
   discussionCharacterDatas:
   - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
     discussionID: Chat-Cerf
-    discussionTag: Rouge
+    discussionTag: F5-F14
   - characterData: {fileID: 11400000, guid: 9e0f6c15c337d324a95cb62ffcf54c92, type: 2}
     discussionID: Chat-Chien
-    discussionTag: 
+    discussionTag: F5
   - characterData: {fileID: 11400000}
     discussionID: Chat-Chat
-    discussionTag: Rouge
+    discussionTag: F14
   - characterData: {fileID: 11400000, guid: 277e442620a65304fa91d969abf93cac, type: 2}
     discussionID: Chat-Elephant
-    discussionTag: Elephant est trans
+    discussionTag: 
   - characterData: {fileID: 0}
     discussionID: 
     discussionTag: 
@@ -50,13 +51,13 @@ MonoBehaviour:
   questionDatas:
   - questionID: QuestionChat1
     questionDifficulty: 1
-    questionTag: Rouge
+    questionTag: F5
   - questionID: QuestionChat2
     questionDifficulty: 1
-    questionTag: Bleu
+    questionTag: F14
   - questionID: QuestionChat3
     questionDifficulty: 1
-    questionTag: Elephant est trans
+    questionTag: 
   - questionID: QuestionChat4
     questionDifficulty: 1
     questionTag: 

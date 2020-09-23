@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Lapin
   characterModel: {fileID: 0}
+  characterMask: {fileID: 21300000, guid: 84a9114ab28f94e469a62b9feae04bf0, type: 3}
   characterBackground: {fileID: 0}
   characterDescription: 
   discussionCharacterDatas:
+  - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
+    discussionID: Lapin_Lapin
+    discussionTag: Zbla
   - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
-    discussionID: Lapin-Chat
-    discussionTag: 
+    discussionID: TestNam
+    discussionTag: Zbla
   questionDatas:
   - questionID: LapinQuestion1-1
     questionDifficulty: 1

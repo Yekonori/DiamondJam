@@ -14,57 +14,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Loup
   characterModel: {fileID: 0}
+  characterMask: {fileID: 21300000, guid: 84a9114ab28f94e469a62b9feae04bf0, type: 3}
+  characterBackground: {fileID: 0}
   characterDescription: 
-  discussionDatas:
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
   discussionCharacterDatas:
   - characterData: {fileID: 0}
     discussionID: 
+    discussionTag: 
   - characterData: {fileID: 0}
     discussionID: 
+    discussionTag: 
   - characterData: {fileID: 0}
     discussionID: 
+    discussionTag: 
   - characterData: {fileID: 0}
     discussionID: 
+    discussionTag: 
   - characterData: {fileID: 0}
     discussionID: 
+    discussionTag: 
   - characterData: {fileID: 0}
     discussionID: 
+    discussionTag: 
   - characterData: {fileID: 0}
     discussionID: 
+    discussionTag: 
   - characterData: {fileID: 0}
     discussionID: 
+    discussionTag: 
   - characterData: {fileID: 0}
     discussionID: 
+    discussionTag: 
   - characterData: {fileID: 0}
     discussionID: 
+    discussionTag: 
   questionDatas:
   - questionID: 
     questionDifficulty: 0
+    questionTag: 
   - questionID: 
     questionDifficulty: 0
+    questionTag: 
   - questionID: 
     questionDifficulty: 0
+    questionTag: 
   - questionID: 
     questionDifficulty: 0
+    questionTag: 
   - questionID: 
     questionDifficulty: 0
+    questionTag: 
   - questionID: 
     questionDifficulty: 0
+    questionTag: 
   - questionID: 
     questionDifficulty: 0
+    questionTag: 
   - questionID: 
     questionDifficulty: 0
+    questionTag: 
   - questionID: 
     questionDifficulty: 0
+    questionTag: 
   - questionID: 
     questionDifficulty: 0
+    questionTag: 
