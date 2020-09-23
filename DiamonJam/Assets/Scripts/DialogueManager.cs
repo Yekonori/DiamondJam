@@ -21,9 +21,9 @@ public class DialogueManager : MonoBehaviour
         // vIDE.assignedDialogue =
         //Subscribe to some events and Begin the Dialogue
 
-        VD.OnNodeChange += UpdateNode;
-        VD.OnEnd += EndDialog;
-        VD.BeginDialogue(GetComponent<VIDE_Assign>()); //This is the first most important method when using VIDE
+       // VD.OnNodeChange += UpdateNode;
+        //VD.OnEnd += EndDialog;
+        //VD.BeginDialogue(GetComponent<VIDE_Assign>()); //This is the first most important method when using VIDE
     }
 
 
@@ -64,14 +64,6 @@ public class DialogueManager : MonoBehaviour
         //textDialogName.text = "";
         //textDialog.text = "";
     }
-
-
-
-
-
-
-
-
 
 
 

@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Swipe : MonoBehaviour
 {
     #region Script Parameters
 
     public GameObject playersField;
+    public GameObject dialoguePanel;
+    public GameObject chooseNPCPanel;
+    public GameObject dialogueManager;
 
     #endregion
 
@@ -17,7 +21,8 @@ public class Swipe : MonoBehaviour
     private Vector2 startPosition;
     private Vector2 endPosition;
 
-    public List<Transform> players;
+    [SerializeField] bool isChoosingNPC = true;
+    private List<Transform> players;
     private int currentPlayerId;
     private GameObject currentPlayer;
 
@@ -41,6 +46,7 @@ public class Swipe : MonoBehaviour
 
     private void Update()
     {
+        if (!isChoosingNPC) return;
         if (Input.touchCount == 1)
         {
             var touch = Input.touches[0];
@@ -69,7 +75,7 @@ public class Swipe : MonoBehaviour
         if (Vector2.Distance(start, end) > swipeDistanceThreshold)
         {
             // Le mouvement est suffisamment ample
-            Debug.Log("StartPosition : " + startPosition + " --- EndPosition : " + endPosition);
+            // Debug.Log("StartPosition : " + startPosition + " --- EndPosition : " + endPosition);
             SwipePlayer(startPosition.x < endPosition.x ? true : false);
         }
     }
@@ -115,7 +121,27 @@ public class Swipe : MonoBehaviour
 
 
         players[currentPlayerId].gameObject.SetActive(true);
+        currentPlayer = players[currentPlayerId].gameObject;
     }
+
+
+    public void ChangeChoosingMode(bool b)
+    {
+        //Debug.Log("Button push");
+        isChoosingNPC = b;
+        if (isChoosingNPC)
+        {
+            chooseNPCPanel.SetActive(true);
+            dialoguePanel.SetActive(false);
+        }
+        else
+        {
+            chooseNPCPanel.SetActive(false);
+            dialoguePanel.SetActive(true);
+            dialogueManager.GetComponent<DialogueManager>().StartDialogue("TestNam");
+        }
+    }
+
 
     #endregion
 }
