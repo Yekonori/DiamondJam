@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     Image imageCurrentMask;
     [SerializeField]
     TMPro.TextMeshProUGUI textTurn;
+    Animator animatorTextTurn;
 
     List<Image> imageGuests = new List<Image>();
 
@@ -56,7 +57,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private bool murderPreviousTurn = false;
 
-    private int currentDiscussionNumber = 2;
+    //private int currentDiscussionNumber = 2;
     private int currentInterogationNumber = 3;
 
     private int currentPlayerHealth;
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        animatorTextTurn = textTurn.GetComponent<Animator>();
         currentMask = debugInterlocutor;
         currentInterlocutor = debugInterlocutor;
         StartNewTurn();
@@ -116,10 +118,10 @@ public class GameManager : MonoBehaviour
         string hour = (turn / 2) + "h";
         if (turn % 2 != 0)
         {
-            Debug.Log("Allo");
             hour = hour + "30";
         }
         textTurn.text = hour;
+        animatorTextTurn.SetTrigger("Feedback");
     }
 
 
@@ -132,6 +134,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         dialogueManager.OnDialogueEnd += EndQuestion;
         currentPlayerHealth = playerHealth;
+        currentInterogationNumber = interogationNumber;
         StartQuestion();
     }
 
