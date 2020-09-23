@@ -14,61 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Lapin
   characterModel: {fileID: 0}
+  characterMask: {fileID: 21300000, guid: 0a738fdc713ebbe4ea9f65cb96fd89e2, type: 3}
+  characterBackground: {fileID: 0}
   characterDescription: 
-  discussionDatas:
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
-  - discussionID: 
   discussionCharacterDatas:
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
-  - characterData: {fileID: 0}
-    discussionID: 
+  - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
+    discussionID: Lapin_Lapin
+    discussionTag: Zbla
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: TestNam
+    discussionTag: Zbla
   questionDatas:
-  - questionID: LapinQuestion1-1
+  - questionID: TestNam
     questionDifficulty: 1
-  - questionID: LapinQuestion1-2
-    questionDifficulty: 2
-  - questionID: LapinQuestion1-3
-    questionDifficulty: 3
-  - questionID: LapinQuestion2-1
-    questionDifficulty: 1
-  - questionID: LapinQuestion2-2
-    questionDifficulty: 2
-  - questionID: LapinQuestion2-3
-    questionDifficulty: 3
-  - questionID: LapinQuestion3-1
-    questionDifficulty: 1
-  - questionID: LapinQuestion3-2
-    questionDifficulty: 2
-  - questionID: LapinQuestion3-3
-    questionDifficulty: 3
-  - questionID: LapinQuestion4-1
-    questionDifficulty: 1
-  - questionID: LapinQuestion4-2
-    questionDifficulty: 2
-  - questionID: LapinQuestion4-3
-    questionDifficulty: 3
+    questionTag: 

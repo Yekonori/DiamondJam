@@ -14,7 +14,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   characterModel: {fileID: 0}
+  characterMask: {fileID: 21300000, guid: 12634a9703f2ebe41a5861ca5a788f8a, type: 3}
+  characterBackground: {fileID: 0}
   characterDescription: 
-  discussionDatas: []
-  discussionCharacterDatas: []
-  questionDatas: []
+  discussionCharacterDatas:
+  - characterData: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
+    discussionID: Lapin_Lapin
+    discussionTag: Hey
+  - characterData: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
+    discussionID: Lapin_Lapin
+    discussionTag: Hey
+  questionDatas:
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 

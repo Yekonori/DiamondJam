@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Panda
   characterModel: {fileID: 0}
+  characterMask: {fileID: 21300000, guid: 63931c5848c9bf243a79b279e06fe030, type: 3}
+  characterBackground: {fileID: 0}
   characterDescription: 
-  discussionDatas: []
   discussionCharacterDatas: []
   questionDatas: []
