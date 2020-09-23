@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using VIDE_Data; //<--- Import to use VD class
 using TMPro;
 
+
+public delegate void Action();
+
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField]
@@ -15,21 +18,18 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     DialogueTextManager dialogueTextManager;
 
+    public event Action OnDialogueEnd;
+
     // Start is called before the first frame update
     void Start()
     {
-        // vIDE.assignedDialogue =
-        //Subscribe to some events and Begin the Dialogue
 
-       // VD.OnNodeChange += UpdateNode;
-        //VD.OnEnd += EndDialog;
-        //VD.BeginDialogue(GetComponent<VIDE_Assign>()); //This is the first most important method when using VIDE
     }
 
 
     public void StartDialogue(string dialogue)
     {
-        vIDE.assignedDialogue = dialogue;
+        vIDE.AssignNew(dialogue);
 
         VD.OnNodeChange += UpdateNode;
         VD.OnEnd += EndDialog;
@@ -55,14 +55,11 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialog(VD.NodeData data)
     {
-        Debug.Log("Allo");
         VD.OnNodeChange -= UpdateNode;
         VD.OnEnd -= EndDialog;
         VD.EndDialogue(); //Third most important method when using VIDE     
 
-        // Clean des trucs
-        //textDialogName.text = "";
-        //textDialog.text = "";
+        if(OnDialogueEnd != null) OnDialogueEnd.Invoke();
     }
 
 

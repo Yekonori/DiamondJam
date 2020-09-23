@@ -32,8 +32,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Swipe swipeManager;
     [SerializeField]
+    MaskSelectionManager maskSelectionManager;
+    [SerializeField]
     DialogueSelectorManager dialogueSelectorManager;
 
+    [Header("Debug")]
+    [SerializeField]
+    SO_CharacterData debugInterlocutor;
 
     private bool murderPreviousTurn = false;
 
@@ -43,11 +48,15 @@ public class GameManager : MonoBehaviour
 
     SO_CharacterData currentMask;
     SO_CharacterData currentInterlocutor;
-    SO_CharacterData characterToDiscuss;
 
     private void Start()
     {
-        StartNewTurn();
+
+        dialogueManager.OnDialogueEnd += EndDiscussion;
+
+        currentInterlocutor = debugInterlocutor;
+        StartDiscussionSelection();
+        //StartNewTurn();
     }
 
 
@@ -104,22 +113,22 @@ public class GameManager : MonoBehaviour
     //   DISCUSSION   =================================================================================================================================================
     private void StartDiscussionSelection()
     {
-
+        maskSelectionManager.StartSelection(guestsList);
     }
 
-    /*public void StartDiscussion()
-    {
-        string dialog = dialogueSelectorManager.SelectDiscussion(currentInterlocutor);
-        dialogueManager.StartDialogue(dialog);
-    }*/
+    // Call by bouton sur une scene
     public void StartDiscussionCharacter()
     {
-        string dialog = dialogueSelectorManager.SelectDiscussionCharacter(currentInterlocutor, characterToDiscuss);
+        maskSelectionManager.EndSelection();
+        string dialog = dialogueSelectorManager.SelectDiscussionCharacter(currentInterlocutor, maskSelectionManager.MaskSelected);
         dialogueManager.StartDialogue(dialog);
     }
+
+    // Call by bouton sur une scene
     public void CancelDiscussion()
     {
-        
+        maskSelectionManager.EndSelection();
+        StartMurderSelection();
     }
 
     public void EndDiscussion()
@@ -127,7 +136,7 @@ public class GameManager : MonoBehaviour
         currentDiscussionNumber -= 1;
         if(currentDiscussionNumber <= 0) // Plus de discussion, go to choix du meurte
         {
-
+            CancelDiscussion();
         }
         else // Encore des discussion à faire, on retourne au menu précédent
         {
@@ -141,25 +150,34 @@ public class GameManager : MonoBehaviour
 
 
 
-
-
+    [Header("Murder")]
+    [SerializeField]
+    GameObject murderPanel;
 
 
     //   CHOIX DU MEURTRE   =================================================================================================================================================
-    public void StartMurderSelection()
+    private void StartMurderSelection()
     {
-        string dialog = dialogueSelectorManager.SelectDiscussionCharacter(currentInterlocutor, characterToDiscuss);
-        dialogueManager.StartDialogue(dialog);
+        murderPanel.gameObject.SetActive(true);
     }
     public void Kill()
     {
+        guestsList.Remove(currentInterlocutor);
         currentMask = currentInterlocutor;
         murderPreviousTurn = true;
         StartNewTurn();
     }
     public void Spare()
     {
+        StartCoroutine(SpareCoroutine());
+    }
+
+
+    private IEnumerator SpareCoroutine()
+    {
+        yield return new WaitForSeconds(2f);
         StartNewTurn();
     }
+
     // ======================================================================================================================================================================
 }
