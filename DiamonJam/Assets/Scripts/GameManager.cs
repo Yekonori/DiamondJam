@@ -87,8 +87,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Go To Character Selection
-            StartDiscussionPhase();
+            StartSwipe();
+            //StartDiscussionPhase();
         }
         murderPreviousTurn = false;
     }

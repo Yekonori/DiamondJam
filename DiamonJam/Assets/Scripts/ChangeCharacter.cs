@@ -133,17 +133,17 @@ public class ChangeCharacter : MonoBehaviour
     {
         //Debug.Log("Button push");
         isChoosingNPC = b;
-        //if (isChoosingNPC)
-        //{
-        //    chooseNPCPanel.SetActive(true);
-        //    dialoguePanel.SetActive(false);
-        //}
-        //else
-        //{
-        //    chooseNPCPanel.SetActive(false);
-        //    dialoguePanel.SetActive(true);
-        //    dialogueManager.GetComponent<DialogueManager>().StartDialogue("TestNam");
-        //}
+        if (isChoosingNPC)
+        {
+            chooseNPCPanel.SetActive(true);
+            //dialoguePanel.SetActive(false);
+        }
+        else
+        {
+            chooseNPCPanel.SetActive(false);
+           // dialoguePanel.SetActive(true);
+            //dialogueManager.GetComponent<DialogueManager>().StartDialogue("TestNam");
+        }
     }
 
     public void InitListGuests(List<SO_CharacterData> list)
