@@ -5949,7 +5949,7 @@ MonoBehaviour:
   imageGuestPrefab: {fileID: 1120649852}
   imageCurrentMask: {fileID: 1767063365}
   textTurn: {fileID: 658929871}
-  debugInterlocutor: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+  debugInterlocutor: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
   murderPreviousTurn: 0
   murderPanel: {fileID: 1411690319}
   gameOverDialog: GameOverDialog
@@ -6013,22 +6013,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b0d471aee451b92409afab5d0afd4e7c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.0002617804
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0d471aee451b92409afab5d0afd4e7c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0d471aee451b92409afab5d0afd4e7c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0d471aee451b92409afab5d0afd4e7c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0d471aee451b92409afab5d0afd4e7c,
         type: 3}
@@ -6038,7 +6038,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b0d471aee451b92409afab5d0afd4e7c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 360.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b0d471aee451b92409afab5d0afd4e7c,
         type: 3}
