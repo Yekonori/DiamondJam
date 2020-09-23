@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class MaskSelectionManager : MonoBehaviour
 {
-    //[SerializeField]
-    //GameObject menuMaskSelection;
+    [SerializeField]
+    GameObject menuMaskSelection;
 
 
     [SerializeField]
@@ -33,6 +33,7 @@ public class MaskSelectionManager : MonoBehaviour
 
     public void StartSelection(List<SO_CharacterData> characters)
     {
+        menuMaskSelection.SetActive(true);
         eventStartSelection.Invoke();
         masks = characters;
         for (int i = 0; i < characters.Count; i++)

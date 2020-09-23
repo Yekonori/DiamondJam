@@ -2517,6 +2517,17 @@ MonoBehaviour:
           m_StringArgument: Spare
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1593927039}
+        m_MethodName: Spare
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &491692185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5689,6 +5700,17 @@ MonoBehaviour:
           m_StringArgument: Kill
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1593927039}
+        m_MethodName: Kill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1530364758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5763,8 +5785,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 20, y: 400}
-  m_SizeDelta: {x: 392.7, y: 100}
+  m_AnchoredPosition: {x: 20, y: -540}
+  m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1530389240
 MonoBehaviour:
@@ -6082,7 +6104,7 @@ MonoBehaviour:
   maskSelectionManager: {fileID: 1907417633}
   dialogueSelectorManager: {fileID: 1593927041}
   debugInterlocutor: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
-  murderPreviousTurn: 1
+  murderPreviousTurn: 0
   murderPanel: {fileID: 1411690319}
   gameOverDialog: GameOverDialog
   shakeScreen: {fileID: 1574405964}
@@ -7136,6 +7158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a97359446ccef41abc776f9dfd3e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuMaskSelection: {fileID: 663052772}
   buttonListParent: {fileID: 1861435084}
   buttonPrefab: {fileID: 6835333818712269815}
   eventStartSelection:
@@ -8114,7 +8137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2102785773
 RectTransform:
   m_ObjectHideFlags: 0
