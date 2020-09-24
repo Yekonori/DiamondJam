@@ -78,7 +78,10 @@ public class DialogueTextManager : MonoBehaviour
 
             // Print new Letter
             textDialog.maxVisibleCharacters += 1;
-
+            if (UpdateInput() == true)
+            {
+                break;
+            }
         }
         EndTextUpdate();
         while (UpdateInput() == false)
@@ -92,6 +95,7 @@ public class DialogueTextManager : MonoBehaviour
 
     private void EndTextUpdate()
     {
+        textDialog.maxVisibleCharacters = actualLenght;
         nextButton.gameObject.SetActive(true);
         characterSpeak.Speak(false);
     }

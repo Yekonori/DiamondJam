@@ -6,6 +6,15 @@ using System.Linq;
 public class DialogueSelectorManager : MonoBehaviour
 {
 
+    [SerializeField]
+    private int mediumDifficultyThreshold;
+    [SerializeField]
+    private int hardDifficultyThreshold;
+
+
+    private int questionCount;
+
+
     private int levelDifficulty;
     public int LevelDifficulty
     {
@@ -63,6 +72,7 @@ public class DialogueSelectorManager : MonoBehaviour
 
     public string SelectQuestion(SO_CharacterData maskWorn)
     {
+        AddQuestionCount();
         for (int i = 0; i < maskWorn.QuestionDatas.Length; i++)
         {
             for (int j = 0; j < playerKnowledge.Count; j++)
@@ -73,8 +83,29 @@ public class DialogueSelectorManager : MonoBehaviour
                 }
             }
         }
-        // Si le joueur n'a pas le bon tag, on prend un truc au pif
-        return maskWorn.QuestionDatas[Random.Range(0, maskWorn.QuestionDatas.Length-1)].QuestionID;
+        // Si le joueur n'a pas le bon tag, on prend un truc au pif avec la bonne difficulté
+        List<QuestionData> questions = new List<QuestionData>();
+        for (int i = 0; i < maskWorn.QuestionDatas.Length; i++)
+        {
+            if (maskWorn.QuestionDatas[i].QuestionDifficulty == levelDifficulty)
+            {
+                questions.Add(maskWorn.QuestionDatas[i]);
+            }
+        }
+
+        if(questions.Count == 0)
+            return maskWorn.QuestionDatas[Random.Range(0, maskWorn.QuestionDatas.Length - 1)].QuestionID;
+
+        return questions[Random.Range(0, questions.Count - 1)].QuestionID;
+    }
+
+    private void AddQuestionCount()
+    {
+        questionCount += 1;
+        if (questionCount == mediumDifficultyThreshold)
+            levelDifficulty = 2;
+        if (questionCount == hardDifficultyThreshold)
+            levelDifficulty = 3;
     }
 
 }

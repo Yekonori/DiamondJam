@@ -79,16 +79,18 @@ public class GameManager : MonoBehaviour
     {
         turn -= 2;
         DrawHUD();
-        if (murderPreviousTurn == true)
+        if(turn < guestsList.Count * 2)
+        {
+            GameOverTimeout();
+        }
+        else if (murderPreviousTurn == true)
         {
             // Go To Interrogation
             StartCoroutine(StartQuestionCoroutine());
-            //StartQuestion();
         }
         else
         {
             StartSwipe();
-            //StartDiscussionPhase();
         }
         murderPreviousTurn = false;
     }
@@ -221,6 +223,12 @@ public class GameManager : MonoBehaviour
     {
         DrawNewTurn();
         turn -= 1;
+        if (turn <= guestsList.Count * 2) // Game over au temps
+        {
+            dialogueManager.OnDialogueEnd -= EndDiscussion;
+            GameOverTimeout();
+            return;
+        }
         StartDiscussionSelection();
     }
 
@@ -293,6 +301,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     string gameOverDialog;
     [SerializeField]
+    string gameOverTimeout;
+    [SerializeField]
     Shake shakeScreen;
     [SerializeField]
     Flash flashRedBackground;
@@ -330,12 +340,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
     public void GameOver()
     {
         moveCharacterPivot.MoveToNewParent(characterPositionGameOver);
         dialogueManager.OnDialogueEnd += GameOverAnimation;
         dialogueManager.StartDialogue(gameOverDialog);
-
     }
 
     public void GameOverAnimation()
@@ -352,6 +363,10 @@ public class GameManager : MonoBehaviour
 
 
 
-
+    public void GameOverTimeout()
+    {
+        dialogueManager.OnDialogueEnd += GameOverAnimation;
+        dialogueManager.StartDialogue(gameOverTimeout);
+    }
 
 }

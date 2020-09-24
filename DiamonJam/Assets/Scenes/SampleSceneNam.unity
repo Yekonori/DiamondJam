@@ -6565,6 +6565,7 @@ MonoBehaviour:
   murderPreviousTurn: 0
   murderPanel: {fileID: 1411690319}
   gameOverDialog: GameOverDialog
+  gameOverTimeout: GameOverTimeout
   shakeScreen: {fileID: 1574405964}
   flashRedBackground: {fileID: 2065644125}
   zawa: {fileID: 1735908195}
@@ -6600,6 +6601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425b82e160a234e4599b0d881b212ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mediumDifficultyThreshold: 9
+  hardDifficultyThreshold: 15
 --- !u!1001 &1598930086
 PrefabInstance:
   m_ObjectHideFlags: 0
