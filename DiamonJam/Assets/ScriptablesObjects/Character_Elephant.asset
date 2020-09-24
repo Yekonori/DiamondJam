@@ -21,34 +21,64 @@ MonoBehaviour:
   characterBackground: {fileID: 0}
   characterDescription: 
   discussionCharacterDatas:
+  - characterData: {fileID: 11400000, guid: 9e0f6c15c337d324a95cb62ffcf54c92, type: 2}
+    discussionID: Elephant_Chien
+    discussionTag: C5-C6-C14-C17
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Elephant_Chat
+    discussionTag: D7
   - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
-    discussionID: Elephant-Chat
-    discussionTag: Rouge
-  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
-    discussionID: Elephant-Chat
-    discussionTag: Rouge
-  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
-    discussionID: Elephant-Chat
-    discussionTag: Rouge
-  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
-    discussionID: Elephant-Chat
-    discussionTag: Rouge
-  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
-    discussionID: Elephant-Chat
-    discussionTag: Rouge
-  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
-    discussionID: Elephant-Chat
-    discussionTag: Rouge
-  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
-    discussionID: Elephant-Chat
-    discussionTag: Rouge
-  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
-    discussionID: Elephant-Chat
-    discussionTag: Rouge
-  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
-    discussionID: Elephant-Chat
-    discussionTag: Rouge
-  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
-    discussionID: Elephant-Chat
-    discussionTag: Rouge
-  questionDatas: []
+    discussionID: Elephant_Cerf
+    discussionTag: E15-E6
+  - characterData: {fileID: 11400000, guid: b10456193a36ab8469c0b170a800956d, type: 2}
+    discussionID: Elephant_Renard
+    discussionTag: F5-F14
+  - characterData: {fileID: 11400000, guid: b5a7c8e17125c1644918bb380ab86f8b, type: 2}
+    discussionID: Elephant_Oiseau
+    discussionTag: G6-G11
+  - characterData: {fileID: 11400000, guid: c3698dd96ed920141922bad9ed476b7e, type: 2}
+    discussionID: Elephant_Ours
+    discussionTag: H17-I10
+  - characterData: {fileID: 11400000}
+    discussionID: Elephant_Elephant
+    discussionTag: I6-I7-I9-I11-I12-I14
+  - characterData: {fileID: 11400000, guid: 2cf2c9860f55980429c78fd75068564a, type: 2}
+    discussionID: Elephant_Panda
+    discussionTag: J4-J6-J11
+  questionDatas:
+  - questionID: Question1_Elephant
+    questionDifficulty: 1
+    questionTag: I4
+  - questionID: Question2_Elephant
+    questionDifficulty: 1
+    questionTag: I5
+  - questionID: Question3_Elephant
+    questionDifficulty: 1
+    questionTag: I6
+  - questionID: Question4_Elephant
+    questionDifficulty: 1
+    questionTag: I7
+  - questionID: Question5_Elephant
+    questionDifficulty: 2
+    questionTag: I9
+  - questionID: Question6_Elephant
+    questionDifficulty: 2
+    questionTag: I10
+  - questionID: Question7_Elephant
+    questionDifficulty: 2
+    questionTag: I11
+  - questionID: Question8_Elephant
+    questionDifficulty: 2
+    questionTag: I12
+  - questionID: Question9_Elephant
+    questionDifficulty: 3
+    questionTag: I14
+  - questionID: Question10_Elephant
+    questionDifficulty: 3
+    questionTag: I15
+  - questionID: Question11_Elephant
+    questionDifficulty: 3
+    questionTag: I16
+  - questionID: Question12_Elephant
+    questionDifficulty: 3
+    questionTag: I17

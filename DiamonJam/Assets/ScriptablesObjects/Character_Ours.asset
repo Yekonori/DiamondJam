@@ -20,5 +20,65 @@ MonoBehaviour:
   characterMask: {fileID: 21300000, guid: 6b112ed50626b864eb286028efa62684, type: 3}
   characterBackground: {fileID: 0}
   characterDescription: 
-  discussionCharacterDatas: []
-  questionDatas: []
+  discussionCharacterDatas:
+  - characterData: {fileID: 11400000, guid: 9e0f6c15c337d324a95cb62ffcf54c92, type: 2}
+    discussionID: Ours_Chien
+    discussionTag: C5-C6-C14-C17
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Ours_Chat
+    discussionTag: D11-D12
+  - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
+    discussionID: Ours_Cerf
+    discussionTag: E14
+  - characterData: {fileID: 11400000, guid: b10456193a36ab8469c0b170a800956d, type: 2}
+    discussionID: Ours_Renard
+    discussionTag: F6-F7-F9-F10
+  - characterData: {fileID: 11400000, guid: b5a7c8e17125c1644918bb380ab86f8b, type: 2}
+    discussionID: Ours_Oiseau
+    discussionTag: G4-G5-G9
+  - characterData: {fileID: 11400000}
+    discussionID: Ours_Ours
+    discussionTag: H4-H7
+  - characterData: {fileID: 11400000, guid: 277e442620a65304fa91d969abf93cac, type: 2}
+    discussionID: Ours_Elephant
+    discussionTag: I16
+  - characterData: {fileID: 11400000, guid: 2cf2c9860f55980429c78fd75068564a, type: 2}
+    discussionID: Ours_Panda
+    discussionTag: J4-J6-J11
+  questionDatas:
+  - questionID: Question1_Ours
+    questionDifficulty: 1
+    questionTag: H4
+  - questionID: Question2_Ours
+    questionDifficulty: 1
+    questionTag: H5
+  - questionID: Question3_Ours
+    questionDifficulty: 1
+    questionTag: H6
+  - questionID: Question4_Ours
+    questionDifficulty: 1
+    questionTag: H7
+  - questionID: Question5_Ours
+    questionDifficulty: 2
+    questionTag: H9
+  - questionID: Question6_Ours
+    questionDifficulty: 2
+    questionTag: H10
+  - questionID: Question7_Ours
+    questionDifficulty: 2
+    questionTag: H11
+  - questionID: Question8_Ours
+    questionDifficulty: 2
+    questionTag: H12
+  - questionID: Question9_Ours
+    questionDifficulty: 3
+    questionTag: H14
+  - questionID: Question10_Ours
+    questionDifficulty: 3
+    questionTag: H15
+  - questionID: Question11_Ours
+    questionDifficulty: 3
+    questionTag: H16
+  - questionID: Question12_Ours
+    questionDifficulty: 3
+    questionTag: H17

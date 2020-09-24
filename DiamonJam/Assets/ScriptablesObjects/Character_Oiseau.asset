@@ -21,58 +21,64 @@ MonoBehaviour:
   characterBackground: {fileID: 0}
   characterDescription: 
   discussionCharacterDatas:
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
+  - characterData: {fileID: 11400000, guid: 9e0f6c15c337d324a95cb62ffcf54c92, type: 2}
+    discussionID: Oiseau_Chien
+    discussionTag: C15
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Oiseau_Chat
+    discussionTag: D14-C7
+  - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
+    discussionID: Oiseau_Cerf
+    discussionTag: E17-E10-G11
+  - characterData: {fileID: 11400000, guid: b10456193a36ab8469c0b170a800956d, type: 2}
+    discussionID: Oiseau_Renard
+    discussionTag: F12-F17-G17
+  - characterData: {fileID: 11400000}
+    discussionID: Oiseau_Oiseau
+    discussionTag: G7-G10-G12
+  - characterData: {fileID: 11400000, guid: c3698dd96ed920141922bad9ed476b7e, type: 2}
+    discussionID: Oiseau_Ours
+    discussionTag: H5-H6-H9-H10-H12-H16
+  - characterData: {fileID: 11400000, guid: 277e442620a65304fa91d969abf93cac, type: 2}
+    discussionID: Oiseau_Elephant
+    discussionTag: I5
+  - characterData: {fileID: 11400000, guid: 2cf2c9860f55980429c78fd75068564a, type: 2}
+    discussionID: Oiseau_Panda
+    discussionTag: J4-J7-J9-J15-J16
   questionDatas:
-  - questionID: 
-    questionDifficulty: 0
-    questionTag: 
-  - questionID: 
-    questionDifficulty: 0
-    questionTag: 
-  - questionID: 
-    questionDifficulty: 0
-    questionTag: 
-  - questionID: 
-    questionDifficulty: 0
-    questionTag: 
-  - questionID: 
-    questionDifficulty: 0
-    questionTag: 
-  - questionID: 
-    questionDifficulty: 0
-    questionTag: 
-  - questionID: 
-    questionDifficulty: 0
-    questionTag: 
-  - questionID: 
-    questionDifficulty: 0
-    questionTag: 
-  - questionID: 
-    questionDifficulty: 0
-    questionTag: 
+  - questionID: Question1_Oiseau
+    questionDifficulty: 1
+    questionTag: G4
+  - questionID: Question2_Oiseau
+    questionDifficulty: 1
+    questionTag: G5
+  - questionID: Question3_Oiseau
+    questionDifficulty: 1
+    questionTag: G6
+  - questionID: Question4_Oiseau
+    questionDifficulty: 1
+    questionTag: G7
+  - questionID: Question5_Oiseau
+    questionDifficulty: 2
+    questionTag: G9
+  - questionID: Question6_Oiseau
+    questionDifficulty: 2
+    questionTag: G10
+  - questionID: Question7_Oiseau
+    questionDifficulty: 2
+    questionTag: G11
+  - questionID: Question8_Oiseau
+    questionDifficulty: 2
+    questionTag: G12
+  - questionID: Question9_Oiseau
+    questionDifficulty: 3
+    questionTag: G14
+  - questionID: Question10_Oiseau
+    questionDifficulty: 3
+    questionTag: G15
+  - questionID: Question11_Oiseau
+    questionDifficulty: 3
+    questionTag: G16
+  - questionID: Question12_Oiseau
+    questionDifficulty: 3
+    questionTag: G17

@@ -20,5 +20,65 @@ MonoBehaviour:
   characterMask: {fileID: 21300000, guid: 63931c5848c9bf243a79b279e06fe030, type: 3}
   characterBackground: {fileID: 0}
   characterDescription: 
-  discussionCharacterDatas: []
-  questionDatas: []
+  discussionCharacterDatas:
+  - characterData: {fileID: 11400000, guid: 9e0f6c15c337d324a95cb62ffcf54c92, type: 2}
+    discussionID: Panda_Chien
+    discussionTag: C6-C7-C9-C14
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Panda_Chat
+    discussionTag: D15
+  - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
+    discussionID: Panda_Cerf
+    discussionTag: E5-E11-E16
+  - characterData: {fileID: 11400000, guid: b10456193a36ab8469c0b170a800956d, type: 2}
+    discussionID: Panda_Renard
+    discussionTag: F5-F11-I11
+  - characterData: {fileID: 11400000, guid: b5a7c8e17125c1644918bb380ab86f8b, type: 2}
+    discussionID: Panda_Oiseau
+    discussionTag: G17
+  - characterData: {fileID: 11400000, guid: c3698dd96ed920141922bad9ed476b7e, type: 2}
+    discussionID: Panda_Ours
+    discussionTag: H10
+  - characterData: {fileID: 11400000, guid: 277e442620a65304fa91d969abf93cac, type: 2}
+    discussionID: Panda_Elephant
+    discussionTag: I4-I6-I12
+  - characterData: {fileID: 11400000}
+    discussionID: Panda_Panda
+    discussionTag: J4-J10-J11
+  questionDatas:
+  - questionID: Question1_Panda
+    questionDifficulty: 1
+    questionTag: J4
+  - questionID: Question2_Panda
+    questionDifficulty: 1
+    questionTag: J5
+  - questionID: Question3_Panda
+    questionDifficulty: 1
+    questionTag: J6
+  - questionID: Question4_Panda
+    questionDifficulty: 1
+    questionTag: J7
+  - questionID: Question5_Panda
+    questionDifficulty: 2
+    questionTag: J9
+  - questionID: Question6_Panda
+    questionDifficulty: 2
+    questionTag: J10
+  - questionID: Question7_Panda
+    questionDifficulty: 2
+    questionTag: J11
+  - questionID: Question8_Panda
+    questionDifficulty: 2
+    questionTag: J12
+  - questionID: Question9_Panda
+    questionDifficulty: 3
+    questionTag: J14
+  - questionID: Question10_Panda
+    questionDifficulty: 3
+    questionTag: J15
+  - questionID: Question11_Panda
+    questionDifficulty: 3
+    questionTag: J16
+  - questionID: Question12_Panda
+    questionDifficulty: 3
+    questionTag: J17
