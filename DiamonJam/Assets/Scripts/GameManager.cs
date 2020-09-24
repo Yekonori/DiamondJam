@@ -22,13 +22,17 @@ public class GameManager : MonoBehaviour
 
     [Header("Parameter")]
     [SerializeField]
-    private List<string> introDialog;
-    [SerializeField]
     private int turn = 40;
     [SerializeField]
     private int playerHealth = 2;
     [SerializeField]
     private int interogationNumber = 3;
+
+    [Header("Intro")]
+    [SerializeField]
+    private SO_CharacterData characterIntro;
+    [SerializeField]
+    private List<string> introDialog;
 
     [Header("Data")]
     [SerializeField]
@@ -45,6 +49,8 @@ public class GameManager : MonoBehaviour
     DialogueSelectorManager dialogueSelectorManager;
 
     [Header("HUD")]
+    [SerializeField]
+    GameObject guestPanel;
     [SerializeField]
     Transform guestTransform;
     [SerializeField]
@@ -71,16 +77,68 @@ public class GameManager : MonoBehaviour
     {
         animatorTextTurn = textTurn.GetComponent<Animator>();
         currentMask = debugInterlocutor;
-        currentInterlocutor = debugInterlocutor;
-        StartNewTurn();
+        currentInterlocutor = characterIntro;
+        DrawHUD();
+
+        //StartSwipe();
+        dialogueManager.OnDialogueEnd += EndDiscussionIntro;
+        DiscussionIntro();
+        introDialog.RemoveAt(0);
     }
 
 
+
+
+    int debug = 0;
+
+    // ================================================================================================================================== //
+    //   DIALOG INITIAL 
+    // ================================================================================================================================== //
+    public void DiscussionIntro()
+    {
+        if (debug == 1)
+            swipeManager.InstantiateCharacter(characterIntro);
+        dialogueManager.StartDialogue(introDialog[0]);
+        debug += 1;
+    }
+
+
+
+    public void EndDiscussionIntro()
+    {
+        if(introDialog.Count == 0)
+        {
+            dialogueManager.OnDialogueEnd -= EndDiscussionIntro;
+            murderPanel.gameObject.SetActive(true);
+            animator.SetTrigger("KillTuto");
+
+            Kill();
+        }
+        else
+        {        
+            DiscussionIntro();
+            introDialog.RemoveAt(0);
+        }
+    }
+
+
+
+
+
+    // ================================================================================================================================== //
+    //   START TURN  
+    // ================================================================================================================================== //
     private void StartNewTurn()
     {
         turn -= 2;
+        guestPanel.SetActive(true);
         DrawHUD();
-        if(turn < guestsList.Count * 2)
+        if (guestsList.Count == 1)
+        {
+            Debug.Log("GG");
+            GameOverAnimation();
+        }
+        else if (turn < guestsList.Count * 2)
         {
             GameOverTimeout();
         }
@@ -134,10 +192,12 @@ public class GameManager : MonoBehaviour
     // ================================================================================================================================== //
     private IEnumerator StartQuestionCoroutine()
     {
+        swipeManager.InstantiateCharacter(guestsList[0]);
         yield return new WaitForSeconds(2f);
         dialogueManager.OnDialogueEnd += EndQuestion;
         currentPlayerHealth = playerHealth;
         currentInterogationNumber = interogationNumber;
+        dialogueSelectorManager.CreateQuestions(currentMask); // Créer une liste de questions
         StartQuestion();
     }
 
@@ -154,7 +214,7 @@ public class GameManager : MonoBehaviour
         if (currentInterogationNumber <= 0) // Plus de question, on passe à la sélection
         {
             dialogueManager.OnDialogueEnd -= EndQuestion;
-            StartDiscussionPhase();
+            StartSwipe();
         }
         else // Encore des questions 
         {
@@ -175,6 +235,8 @@ public class GameManager : MonoBehaviour
     // ================================================================================================================================== //
     public void StartSwipe()
     {
+        moveCharacterPivot.gameObject.SetActive(true);
+        swipeManager.ChangeChoosingMode(true);
         swipeManager.InitListGuests(guestsList);
     }
 
@@ -252,7 +314,10 @@ public class GameManager : MonoBehaviour
     [Header("Murder")]
     [SerializeField]
     GameObject murderPanel;
-
+    [SerializeField]
+    Animator animator;
+    [SerializeField]
+    Shake shakeScreenKill;
 
     // ================================================================================================================================== //
     //   CHOIX DU MEURTRE 
@@ -272,7 +337,11 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator KillCoroutine()
     {
-        yield return new WaitForSeconds(6.4f);
+        yield return new WaitForSeconds(2.5f);
+        shakeScreenKill.ShakeEffect();
+        flashRedBackground.StartFlash();
+        swipeManager.InstantiateDeadModel(currentInterlocutor);
+        yield return new WaitForSeconds(3.9f);
         moveCharacterPivot.MoveToNewParent(characterPositionDefault, 1);
         StartNewTurn();
         yield return new WaitForSeconds(1.1f);
@@ -359,6 +428,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator GameOverCoroutine()
     {
         yield return new WaitForSeconds(8f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         // Load scene
     }
 

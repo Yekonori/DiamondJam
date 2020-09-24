@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,6 +29,10 @@ public class ChangeCharacter : MonoBehaviour
     private int currentPlayerId;
     private GameObject currentPlayer;
 
+    [SerializeField]
+    private Vector3 xOffSet = new Vector3(0.15f, 0f, 0f);
+
+    public float timeToMove = 0.5f;
     #endregion
 
 
@@ -35,31 +40,28 @@ public class ChangeCharacter : MonoBehaviour
 
     private void Start()
     {
-        //players = new List<Transform>();
-
-        //foreach(Transform transform in playersField.transform)
-        //{
-        //    players.Add(transform);
-        //}
-
         currentPlayerId = 0;
-        //currentPlayer = players[currentPlayerId].gameObject;
     }
 
     private void Update()
     {
         if (!isChoosingNPC) return;
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
         //swipe with mouse
         if (Input.GetMouseButtonDown(0))
         {
             startPosition = Input.mousePosition.x;
         }
-
-        if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButton(0))
+        {
+            float ratio = Input.mousePosition.x - startPosition;
+            currentPlayer.transform.localEulerAngles = new Vector3(-ratio * 0.01f, 0, 0);
+            //startPosition = Input.mousePosition.x;
+        }
+        else if (Input.GetMouseButtonUp(0))
         {
             endPosition = Input.mousePosition.x;
-            Debug.Log(Mathf.Abs(endPosition - startPosition));
+            //Debug.Log(Mathf.Abs(endPosition - startPosition));
             AnalyzeGesture(startPosition, endPosition);
         }
 #endif
@@ -139,9 +141,10 @@ public class ChangeCharacter : MonoBehaviour
             }
         }
 
-        if (currentPlayer != null) Destroy(currentPlayer);
+        if (currentPlayer != null) StartCoroutine(DestroyCurrentPlayer(toRight, currentPlayer)); //Destroy(currentPlayer);
 
-        currentPlayer = Instantiate(players[currentPlayerId].CharacterModel, whereToInstanciate);
+        StartCoroutine(InstantiateNextPlayer(toRight, currentPlayerId));
+        //currentPlayer = Instantiate(players[currentPlayerId].CharacterModel, whereToInstanciate);
         //players[currentPlayerId].gameObject.SetActive(true);
         //currentPlayer = players[currentPlayerId].gameObject;
     }
@@ -149,18 +152,14 @@ public class ChangeCharacter : MonoBehaviour
 
     public void ChangeChoosingMode(bool b)
     {
-        //Debug.Log("Button push");
         isChoosingNPC = b;
         if (isChoosingNPC)
         {
             chooseNPCPanel.SetActive(true);
-            //dialoguePanel.SetActive(false);
         }
         else
         {
             chooseNPCPanel.SetActive(false);
-           // dialoguePanel.SetActive(true);
-            //dialogueManager.GetComponent<DialogueManager>().StartDialogue("TestNam");
         }
     }
 
@@ -168,6 +167,7 @@ public class ChangeCharacter : MonoBehaviour
     {
         players = list;
         currentPlayerId = 0;
+        if (currentPlayer != null) Destroy(currentPlayer);
         currentPlayer = Instantiate(players[currentPlayerId].CharacterModel, whereToInstanciate);
 
     }
@@ -175,6 +175,79 @@ public class ChangeCharacter : MonoBehaviour
     public SO_CharacterData GetCurrentNP_SO()
     {
         return players[currentPlayerId];
+    }
+
+    IEnumerator DestroyCurrentPlayer(bool ToRight, GameObject go)
+    {
+        float timer = 0f;
+        float x = 0f;
+        Vector3 startPosition = go.transform.localEulerAngles;
+        Vector3 endPosition = go.transform.localEulerAngles;
+        if (ToRight)
+        {
+            endPosition += xOffSet;
+        }
+        else
+        {
+            endPosition -= xOffSet;
+        }
+
+        while (timer < timeToMove)
+        {
+            timer += Time.deltaTime;
+            x = Mathf.LerpAngle(startPosition.x, endPosition.x, timer / timeToMove);
+            go.transform.transform.localEulerAngles = new Vector3(x, 0, 0);
+            //go.transform.localEulerAngles = Vector3.Lerp(startPosition, endPosition, timer / timeToMove);
+            yield return null;
+        }
+        Destroy(go);
+    }
+
+    IEnumerator InstantiateNextPlayer(bool Toright, int currentID)
+    {
+        float timer = 0f;
+        float x = 0f;
+        //Transform startPosition = whereToInstanciate;
+
+        if (Toright)
+        {
+            currentPlayer = Instantiate(players[currentID].CharacterModel, whereToInstanciate);
+            currentPlayer.transform.localEulerAngles -= xOffSet;
+            //startPosition = currentPlayer.transform;
+
+        }
+        else
+        {
+            currentPlayer = Instantiate(players[currentID].CharacterModel, whereToInstanciate);
+            currentPlayer.transform.localEulerAngles += xOffSet;
+            //startPosition = currentPlayer.transform;
+        }
+        while (timer < timeToMove)
+        {
+            timer += Time.deltaTime;
+            //Debug.Log(currentPlayer.transform.localEulerAngles);
+            x = Mathf.LerpAngle(currentPlayer.transform.localEulerAngles.x, 0f, timer / timeToMove);
+            currentPlayer.transform.localEulerAngles = new Vector3(x,0,0);//= Vector3.Lerp(currentPlayer.transform.localEulerAngles, Vector3.zero, timer / timeToMove);
+            yield return null;
+        }
+    }
+
+
+
+    public void InstantiateCharacter(SO_CharacterData character)
+    {
+        if(character == null)
+        {
+            return;
+        }
+        if (currentPlayer != null) Destroy(currentPlayer);
+        currentPlayer = Instantiate(character.CharacterModel, whereToInstanciate);
+    }
+
+    public void InstantiateDeadModel(SO_CharacterData character)
+    {
+        if (currentPlayer != null) Destroy(currentPlayer);
+        currentPlayer = Instantiate(character.CharacterModelDead, whereToInstanciate);
     }
 
     #endregion

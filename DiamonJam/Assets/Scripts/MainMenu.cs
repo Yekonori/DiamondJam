@@ -12,8 +12,8 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         // Need name of the scene or number
-        // SceneManager.LoadScene("MainScene");
-        Debug.Log("StartGame");
+        SceneManager.LoadScene(1);
+        //Debug.Log("StartGame");
     }
 
     public void OpenMain()

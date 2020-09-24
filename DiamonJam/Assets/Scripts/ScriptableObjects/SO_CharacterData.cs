@@ -90,6 +90,13 @@ public class SO_CharacterData : ScriptableObject
 	}
 
 	[SerializeField]
+	private GameObject characterModelDead;
+	public GameObject CharacterModelDead
+	{
+		get { return characterModelDead; }
+	}
+
+	[SerializeField]
 	private Sprite characterMask;
 	public Sprite CharacterMask
 	{
