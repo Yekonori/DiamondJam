@@ -15,10 +15,38 @@ MonoBehaviour:
   characterName: 
   characterModel: {fileID: 919132149155446097, guid: 87fcd266993b7f84f9bf036b2072be8a,
     type: 3}
+  characterModelDead: {fileID: 0}
   characterMask: {fileID: 21300000, guid: 11f65e3ae0cbdcf46a4ad76db234b658, type: 3}
   characterBackground: {fileID: 0}
   characterDescription: 
   discussionCharacterDatas:
+  - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
+    discussionID: Elephant-Chat
+    discussionTag: Rouge
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Elephant-Chat
+    discussionTag: Rouge
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Elephant-Chat
+    discussionTag: Rouge
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Elephant-Chat
+    discussionTag: Rouge
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Elephant-Chat
+    discussionTag: Rouge
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Elephant-Chat
+    discussionTag: Rouge
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Elephant-Chat
+    discussionTag: Rouge
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Elephant-Chat
+    discussionTag: Rouge
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Elephant-Chat
+    discussionTag: Rouge
   - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
     discussionID: Elephant-Chat
     discussionTag: Rouge
