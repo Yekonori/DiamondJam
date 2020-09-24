@@ -22,28 +22,28 @@ MonoBehaviour:
   characterDescription: 
   discussionCharacterDatas:
   - characterData: {fileID: 11400000, guid: 9e0f6c15c337d324a95cb62ffcf54c92, type: 2}
-    discussionID: Chat-Chien
+    discussionID: Chat_Chien
     discussionTag: C7-C9-C11
   - characterData: {fileID: 11400000}
-    discussionID: Chat-Chat
+    discussionID: Chat_Chat
     discussionTag: D17
   - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
-    discussionID: Chat-Cerf
+    discussionID: Chat_Cerf
     discussionTag: E5-E6-E7-E9-E10-E12-E17
   - characterData: {fileID: 11400000, guid: b10456193a36ab8469c0b170a800956d, type: 2}
-    discussionID: Chat-Renard
+    discussionID: Chat_Renard
     discussionTag: F4-F12
   - characterData: {fileID: 11400000, guid: b5a7c8e17125c1644918bb380ab86f8b, type: 2}
-    discussionID: Chat-Oiseau
+    discussionID: Chat_Oiseau
     discussionTag: G4-G9
   - characterData: {fileID: 11400000, guid: c3698dd96ed920141922bad9ed476b7e, type: 2}
-    discussionID: Chat-Ours
+    discussionID: Chat_Ours
     discussionTag: H4-H11-H14
   - characterData: {fileID: 11400000, guid: 277e442620a65304fa91d969abf93cac, type: 2}
-    discussionID: Chat-Elephant
+    discussionID: Chat_Elephant
     discussionTag: I17
   - characterData: {fileID: 11400000, guid: 2cf2c9860f55980429c78fd75068564a, type: 2}
-    discussionID: Chat-Panda
+    discussionID: Chat_Panda
     discussionTag: J4-J17
   questionDatas:
   - questionID: Question1_Chat

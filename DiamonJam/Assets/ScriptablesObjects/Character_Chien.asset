@@ -22,28 +22,28 @@ MonoBehaviour:
   characterDescription: 
   discussionCharacterDatas:
   - characterData: {fileID: 11400000}
-    discussionID: Chien-Chien
+    discussionID: Chien_Chien
     discussionTag: C4-C10-C12
   - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
-    discussionID: Chien-Chat
+    discussionID: Chien_Chat
     discussionTag: D4-D5-D9
   - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
-    discussionID: Chien-Cerf
+    discussionID: Chien_Cerf
     discussionTag: E4-E6-E10-E17
   - characterData: {fileID: 11400000, guid: b10456193a36ab8469c0b170a800956d, type: 2}
-    discussionID: Chien-Renard
+    discussionID: Chien_Renard
     discussionTag: F6-F7-F9-F10
   - characterData: {fileID: 11400000, guid: b5a7c8e17125c1644918bb380ab86f8b, type: 2}
-    discussionID: Chien-Oiseau
+    discussionID: Chien_Oiseau
     discussionTag: G5-G6-G14
   - characterData: {fileID: 11400000, guid: c3698dd96ed920141922bad9ed476b7e, type: 2}
-    discussionID: Chien-Ours
+    discussionID: Chien_Ours
     discussionTag: H9-H11-H16-H17
   - characterData: {fileID: 11400000, guid: 277e442620a65304fa91d969abf93cac, type: 2}
-    discussionID: Chien-Elephant
+    discussionID: Chien_Elephant
     discussionTag: I10-I12-I17
   - characterData: {fileID: 11400000, guid: 2cf2c9860f55980429c78fd75068564a, type: 2}
-    discussionID: Chien-Panda
+    discussionID: Chien_Panda
     discussionTag: J4-J5-J12
   questionDatas:
   - questionID: Question1_Chien
