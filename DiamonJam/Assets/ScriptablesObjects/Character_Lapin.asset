@@ -27,13 +27,13 @@ MonoBehaviour:
   questionDatas:
   - questionID: Question1_Lapin
     questionDifficulty: 1
-    questionTag: B4-B5-B6-B7
+    questionTag: B4
   - questionID: Question2_Lapin
     questionDifficulty: 1
-    questionTag: B4-B5-B6-B7
+    questionTag: B5
   - questionID: Question3_Lapin
     questionDifficulty: 1
-    questionTag: B4-B5-B6-B7
+    questionTag: B6
   - questionID: Question4_Lapin
     questionDifficulty: 1
-    questionTag: B4-B5-B6-B7
+    questionTag: B7

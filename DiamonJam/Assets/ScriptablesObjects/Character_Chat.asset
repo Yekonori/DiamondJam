@@ -21,70 +21,64 @@ MonoBehaviour:
   characterBackground: {fileID: 0}
   characterDescription: 
   discussionCharacterDatas:
-  - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
-    discussionID: Chat-Cerf
-    discussionTag: F5-F14
   - characterData: {fileID: 11400000, guid: 9e0f6c15c337d324a95cb62ffcf54c92, type: 2}
     discussionID: Chat-Chien
-    discussionTag: F5
+    discussionTag: C7-C9-C11
   - characterData: {fileID: 11400000}
     discussionID: Chat-Chat
-    discussionTag: F14
+    discussionTag: D17
+  - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
+    discussionID: Chat-Cerf
+    discussionTag: E5-E6-E7-E9-E10-E12-E17
+  - characterData: {fileID: 11400000, guid: b10456193a36ab8469c0b170a800956d, type: 2}
+    discussionID: Chat-Renard
+    discussionTag: F4-F12
+  - characterData: {fileID: 11400000, guid: b5a7c8e17125c1644918bb380ab86f8b, type: 2}
+    discussionID: Chat-Oiseau
+    discussionTag: G4-G9
+  - characterData: {fileID: 11400000, guid: c3698dd96ed920141922bad9ed476b7e, type: 2}
+    discussionID: Chat-Ours
+    discussionTag: H4-H11-H14
   - characterData: {fileID: 11400000, guid: 277e442620a65304fa91d969abf93cac, type: 2}
     discussionID: Chat-Elephant
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
-  - characterData: {fileID: 0}
-    discussionID: 
-    discussionTag: 
+    discussionTag: I17
+  - characterData: {fileID: 11400000, guid: 2cf2c9860f55980429c78fd75068564a, type: 2}
+    discussionID: Chat-Panda
+    discussionTag: J4-J17
   questionDatas:
-  - questionID: QuestionChat1
+  - questionID: Question1_Chat
     questionDifficulty: 1
-    questionTag: F5
-  - questionID: QuestionChat2
+    questionTag: D4
+  - questionID: Question2_Chat
     questionDifficulty: 1
-    questionTag: F14
-  - questionID: QuestionChat3
+    questionTag: D5
+  - questionID: Question3_Chat
     questionDifficulty: 1
-    questionTag: 
-  - questionID: QuestionChat4
+    questionTag: D6
+  - questionID: Question4_Chat
     questionDifficulty: 1
-    questionTag: 
-  - questionID: QuestionChat1-2
+    questionTag: D7
+  - questionID: Question5_Chat
     questionDifficulty: 2
-    questionTag: 
-  - questionID: QuestionChat2-2
+    questionTag: D9
+  - questionID: Question6_Chat
     questionDifficulty: 2
-    questionTag: 
-  - questionID: QuestionChat3-2
+    questionTag: D10
+  - questionID: Question7_Chat
     questionDifficulty: 2
-    questionTag: 
-  - questionID: QuestionChat4-2
+    questionTag: D11
+  - questionID: Question8_Chat
     questionDifficulty: 2
-    questionTag: 
-  - questionID: QuestionChat1-3
+    questionTag: D12
+  - questionID: Question9_Chat
     questionDifficulty: 3
-    questionTag: 
-  - questionID: QuestionChat2-3
+    questionTag: D14
+  - questionID: Question10_Chat
     questionDifficulty: 3
-    questionTag: 
-  - questionID: QuestionChat3-3
+    questionTag: D15
+  - questionID: Question11_Chat
     questionDifficulty: 3
-    questionTag: 
-  - questionID: QuestionChat4-3
+    questionTag: D16
+  - questionID: Question12_Chat
     questionDifficulty: 3
-    questionTag: 
+    questionTag: D17
