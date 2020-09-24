@@ -42,7 +42,7 @@ public class MainMenu : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
-#if UNITY_STANDALONE
+#if UNITY_ANDROID || UNITY_IOS
         Application.Quit();
 #endif
     }
