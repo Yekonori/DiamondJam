@@ -13,6 +13,8 @@ public class MoveCharacterPivot : MonoBehaviour
     public void MoveToNewParent(Transform newPivot)
     {
         this.transform.SetParent(newPivot);
+        if (this.gameObject.activeInHierarchy == false)
+            return;
         if (moveCharacterCoroutine != null)
             StopCoroutine(moveCharacterCoroutine);
         moveCharacterCoroutine = MoveCharacterCoroutine(speedCoroutine);
@@ -38,6 +40,8 @@ public class MoveCharacterPivot : MonoBehaviour
     public void MoveToNewParent(Transform newPivot, float speed)
     {
         this.transform.SetParent(newPivot);
+        if (this.gameObject.activeInHierarchy == false)
+            return;
         if (moveCharacterCoroutine != null)
             StopCoroutine(moveCharacterCoroutine);
         moveCharacterCoroutine = MoveCharacterCoroutine(speed);

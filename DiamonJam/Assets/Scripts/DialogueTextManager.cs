@@ -73,15 +73,20 @@ public class DialogueTextManager : MonoBehaviour
             while (actualTime >= 0)
             {
                 actualTime -= Time.deltaTime;
+                if (UpdateInput() == true)
+                {
+                    break;
+                }
                 yield return null;
             }
 
-            // Print new Letter
-            textDialog.maxVisibleCharacters += 1;
-            if (UpdateInput() == true)
+            if (UpdateInput() == true) // C'est pas ouf
             {
+                yield return null;
                 break;
             }
+            // Print new Letter
+            textDialog.maxVisibleCharacters += 1;
         }
         EndTextUpdate();
         while (UpdateInput() == false)

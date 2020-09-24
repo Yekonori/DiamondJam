@@ -13,9 +13,65 @@ MonoBehaviour:
   m_Name: Character_Oiseau
   m_EditorClassIdentifier: 
   characterName: 
-  characterModel: {fileID: 0}
-  characterMask: {fileID: 0}
+  characterModel: {fileID: 919132149155446097, guid: 885354cbb99272c47aa471c10c6fe073,
+    type: 3}
+  characterModelDead: {fileID: 0}
+  characterMask: {fileID: 21300000, guid: c4572e45e0929df45b86815ae679184d, type: 3}
   characterBackground: {fileID: 0}
   characterDescription: 
-  discussionCharacterDatas: []
-  questionDatas: []
+  discussionCharacterDatas:
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  questionDatas:
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 

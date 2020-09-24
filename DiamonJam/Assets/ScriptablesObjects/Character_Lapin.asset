@@ -19,13 +19,19 @@ MonoBehaviour:
   characterBackground: {fileID: 0}
   characterDescription: 
   discussionCharacterDatas:
-  - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
+  - characterData: {fileID: 11400000}
     discussionID: Lapin_Lapin
-    discussionTag: Zbla
-  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
-    discussionID: TestNam
-    discussionTag: Zbla
+    discussionTag: B4-B5-B6-B7
   questionDatas:
-  - questionID: TestNam
+  - questionID: Question1_Lapin
     questionDifficulty: 1
-    questionTag: 
+    questionTag: B4-B5-B6-B7
+  - questionID: Question2_Lapin
+    questionDifficulty: 1
+    questionTag: B4-B5-B6-B7
+  - questionID: Question3_Lapin
+    questionDifficulty: 1
+    questionTag: B4-B5-B6-B7
+  - questionID: Question4_Lapin
+    questionDifficulty: 1
+    questionTag: B4-B5-B6-B7
