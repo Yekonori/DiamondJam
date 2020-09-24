@@ -17,5 +17,59 @@ MonoBehaviour:
   characterMask: {fileID: 0}
   characterBackground: {fileID: 0}
   characterDescription: 
-  discussionCharacterDatas: []
-  questionDatas: []
+  discussionCharacterDatas:
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  - characterData: {fileID: 0}
+    discussionID: 
+    discussionTag: 
+  questionDatas:
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
+  - questionID: 
+    questionDifficulty: 0
+    questionTag: 
