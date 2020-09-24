@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     private SO_CharacterData characterIntro;
     [SerializeField]
     private List<string> introDialog;
+    [SerializeField]
+    private string interrogationDialog;
 
     [Header("Background")]
     [SerializeField]
@@ -69,7 +71,18 @@ public class GameManager : MonoBehaviour
     Image imageCurrentMask;
     [SerializeField]
     TMPro.TextMeshProUGUI textTurn;
+
     Animator animatorTextTurn;
+
+
+
+    [Header("Music")]
+    [SerializeField]
+    AudioClip introMusic;
+
+    [Header("Sound")]
+    [SerializeField]
+    AudioClip killSound;
 
     List<Image> imageGuests = new List<Image>();
 
@@ -107,7 +120,10 @@ public class GameManager : MonoBehaviour
     public void DiscussionIntro()
     {
         if (debug == 1)
+        {
             swipeManager.InstantiateCharacter(characterIntro);
+            SoundManager.Instance.PlayMusic(introMusic);
+        }
         dialogueManager.StartDialogue(introDialog[0]);
         debug += 1;
     }
@@ -207,9 +223,10 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         dialogueManager.OnDialogueEnd += EndQuestion;
         currentPlayerHealth = playerHealth;
-        currentInterogationNumber = interogationNumber;
+        currentInterogationNumber = interogationNumber + 1;
         dialogueSelectorManager.CreateQuestions(currentMask); // Créer une liste de questions
-        StartQuestion();
+        dialogueManager.StartDialogue(interrogationDialog);
+        //StartQuestion();
     }
 
     public void StartQuestion()
@@ -359,6 +376,8 @@ public class GameManager : MonoBehaviour
     private IEnumerator KillCoroutine()
     {
         yield return new WaitForSeconds(2.5f);
+        SoundManager.Instance.FadeMusic();
+        SoundManager.Instance.PlaySound(killSound);
         shakeScreenKill.ShakeEffect();
         flashRedBackground.StartFlash();
         swipeManager.InstantiateDeadModel(currentInterlocutor);

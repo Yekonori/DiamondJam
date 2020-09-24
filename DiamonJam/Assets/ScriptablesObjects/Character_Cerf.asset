@@ -21,28 +21,28 @@ MonoBehaviour:
   characterBackground: {fileID: 0}
   characterDescription: 
   discussionCharacterDatas:
-  - characterData: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
+  - characterData: {fileID: 11400000, guid: 9e0f6c15c337d324a95cb62ffcf54c92, type: 2}
     discussionID: Cerf_Chien
     discussionTag: C4-C5-C10-C12-C17
-  - characterData: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
     discussionID: Cerf_Chat
     discussionTag: D16
-  - characterData: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
+  - characterData: {fileID: 11400000}
     discussionID: Cerf_Cerf
     discussionTag: E5-E11
-  - characterData: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
+  - characterData: {fileID: 11400000, guid: b10456193a36ab8469c0b170a800956d, type: 2}
     discussionID: Cerf_Renard
     discussionTag: F6-F9-F11-F15-F16
-  - characterData: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
+  - characterData: {fileID: 11400000, guid: b5a7c8e17125c1644918bb380ab86f8b, type: 2}
     discussionID: Cerf_Oiseau
     discussionTag: G4-G5-G6-G16
-  - characterData: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
+  - characterData: {fileID: 11400000, guid: c3698dd96ed920141922bad9ed476b7e, type: 2}
     discussionID: Cerf_Ours
     discussionTag: H12-H15-H17
-  - characterData: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
+  - characterData: {fileID: 11400000, guid: 277e442620a65304fa91d969abf93cac, type: 2}
     discussionID: Cerf_Elephant
     discussionTag: I9-I15-l17
-  - characterData: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
+  - characterData: {fileID: 11400000, guid: 2cf2c9860f55980429c78fd75068564a, type: 2}
     discussionID: Cerf_Panda
     discussionTag: J14
   questionDatas:

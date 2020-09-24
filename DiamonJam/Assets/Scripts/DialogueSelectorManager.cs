@@ -11,6 +11,12 @@ public class DialogueSelectorManager : MonoBehaviour
     [SerializeField]
     private int hardDifficultyThreshold;
 
+    [SerializeField]
+    private AudioClip easyMusic;
+    [SerializeField]
+    private AudioClip mediumMusic;
+    [SerializeField]
+    private AudioClip hardMusic;
 
     private int questionCount;
 
@@ -73,6 +79,12 @@ public class DialogueSelectorManager : MonoBehaviour
     // A appelé avant Select question pour ne pas retomber sur les mêmes questions 2 fois
     public void CreateQuestions(SO_CharacterData maskWorn)
     {
+        if(levelDifficulty < mediumDifficultyThreshold)
+            SoundManager.Instance.PlayMusic(easyMusic);
+        else if (levelDifficulty < hardDifficultyThreshold)
+            SoundManager.Instance.PlayMusic(mediumMusic);
+        else
+            SoundManager.Instance.PlayMusic(hardMusic);
         questionsPool = maskWorn.QuestionDatas.ToList();
     }
 

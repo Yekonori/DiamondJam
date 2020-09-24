@@ -929,7 +929,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Talk to this character
+  m_text: Discuter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1624,7 +1624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2092,6 +2092,123 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &557721784
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 461834465336071882, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: killNPC
+      value: 
+      objectReference: {fileID: 557721785}
+    - target: {fileID: 461834465336071882, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: knifeOut
+      value: 
+      objectReference: {fileID: 557721786}
+    - target: {fileID: 461834465336071882, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 557721787}
+    - target: {fileID: 3280667079095724755, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioSourceSE
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280667079640837905, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280667079640837906, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioSourceMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485086663034495752, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.13616352
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485086663034495752, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.0194544
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485086663034495752, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.200246
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485086663034495752, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485086663034495752, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485086663034495752, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485086663034495752, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485086663034495752, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485086663034495752, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485086663034495752, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485086663034495752, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098005262143474357, guid: 6578f06e9c426eb479b286f2cfe46095,
+        type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6578f06e9c426eb479b286f2cfe46095, type: 3}
+--- !u!82 &557721785 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3280667079818930546, guid: 6578f06e9c426eb479b286f2cfe46095,
+    type: 3}
+  m_PrefabInstance: {fileID: 557721784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &557721786 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3280667079095724753, guid: 6578f06e9c426eb479b286f2cfe46095,
+    type: 3}
+  m_PrefabInstance: {fileID: 557721784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &557721787 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3280667079640837905, guid: 6578f06e9c426eb479b286f2cfe46095,
+    type: 3}
+  m_PrefabInstance: {fileID: 557721784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &580001401
 GameObject:
   m_ObjectHideFlags: 0
@@ -5423,7 +5540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5500,7 +5617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5930,6 +6047,7 @@ MonoBehaviour:
   - Dialogue_Introduction
   - Lapin_Presentation
   - Lapin_Lapin
+  interrogationDialog: Dialogue_Interrogation
   fadeBackground: {fileID: 664076576}
   background: {fileID: 251266253}
   interrogationBackground: {fileID: 21300000, guid: 14b41bc88676e4e46800fa0fda3f7154,
@@ -5955,6 +6073,8 @@ MonoBehaviour:
   imageGuestPrefab: {fileID: 1120649852}
   imageCurrentMask: {fileID: 1767063365}
   textTurn: {fileID: 658929871}
+  introMusic: {fileID: 8300000, guid: 86c840ee04bf04044bd434000002043d, type: 3}
+  killSound: {fileID: 8300000, guid: 260123b19ca2593498ee214c43a02e89, type: 3}
   murderPanel: {fileID: 1411690319}
   animator: {fileID: 1411690321}
   shakeScreenKill: {fileID: 1684422949}
@@ -5997,6 +6117,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mediumDifficultyThreshold: 9
   hardDifficultyThreshold: 15
+  easyMusic: {fileID: 8300000, guid: 606e1ddfd7827e24aaee19d43dc285ad, type: 3}
+  mediumMusic: {fileID: 8300000, guid: 2c7622c2a389f864e9e944a8b1cae4c1, type: 3}
+  hardMusic: {fileID: 8300000, guid: fe268dead5c6827479881a1605cf6847, type: 3}
   questionsPool: []
 --- !u!1 &1628109856
 GameObject:
@@ -6033,7 +6156,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: -50, y: -40}
+  m_SizeDelta: {x: 0, y: -40}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1628109858
 MonoBehaviour:
@@ -6054,7 +6177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choose a character to talk to
+  m_text: Choisissez votre prochaine cible
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6081,14 +6204,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 54
+  m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7749,7 +7872,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diags:
   - Charlie
+  - Chat_Cerf
+  - Chat_Chat
+  - Chat_Chien
+  - Chat_Elephant
   - Chat_Lapin
+  - Chat_Oiseau
+  - Chat_Ours
+  - Chat_Panda
+  - Chat_Renard
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
@@ -7793,22 +7924,118 @@ MonoBehaviour:
   - Ours_Panda
   - Ours_Renard
   - QuestChartDemo
+  - Question1_Cerf
+  - Question1_Chat
+  - Question1_Chien
   - Question1_Elephant
   - Question1_Lapin
+  - Question1_Oiseau
   - Question1_Ours
+  - Question1_Panda
+  - Question1_Renard
+  - Question10_Cerf
+  - Question10_Chat
+  - Question10_Chien
+  - Question10_Elephant
+  - Question10_Oiseau
+  - Question10_Ours
+  - Question10_Panda
+  - Question10_Renard
+  - Question11_Cerf
+  - Question11_Chat
+  - Question11_Chien
+  - Question11_Elephant
+  - Question11_Oiseau
+  - Question11_Ours
+  - Question11_Panda
+  - Question11_Renard
+  - Question12_Cerf
+  - Question12_Chat
+  - Question12_Chien
+  - Question12_Elephant
+  - Question12_Oiseau
+  - Question12_Ours
+  - Question12_Panda
+  - Question12_Renard
+  - Question2_Cerf
+  - Question2_Chat
+  - Question2_Chien
   - Question2_Elephant
   - Question2_Lapin
+  - Question2_Oiseau
   - Question2_Ours
+  - Question2_Panda
+  - Question2_Renard
+  - Question3_Cerf
+  - Question3_Chat
+  - Question3_Chien
   - Question3_Elephant
   - Question3_Lapin
+  - Question3_Oiseau
   - Question3_Ours
+  - Question3_Panda
+  - Question3_Renard
+  - Question4_Cerf
+  - Question4_Chat
+  - Question4_Chien
   - Question4_Elephant
   - Question4_Lapin
+  - Question4_Oiseau
   - Question4_Ours
+  - Question4_Panda
+  - Question4_Renard
+  - Question5_Cerf
+  - Question5_Chat
+  - Question5_Chien
+  - Question5_Elephant
+  - Question5_Oiseau
+  - Question5_Ours
+  - Question5_Panda
+  - Question5_Renard
+  - Question6_Cerf
+  - Question6_Chat
+  - Question6_Chien
+  - Question6_Elephant
+  - Question6_Oiseau
+  - Question6_Ours
+  - Question6_Panda
+  - Question6_Renard
+  - Question7_Cerf
+  - Question7_Chat
+  - Question7_Chien
+  - Question7_Elephant
+  - Question7_Oiseau
+  - Question7_Ours
+  - Question7_Panda
+  - Question7_Renard
+  - Question8_Cerf
+  - Question8_Chat
+  - Question8_Chien
+  - Question8_Elephant
+  - Question8_Oiseau
+  - Question8_Ours
+  - Question8_Panda
+  - Question8_Renard
+  - Question9_Cerf
+  - Question9_Chat
+  - Question9_Chien
+  - Question9_Elephant
+  - Question9_Oiseau
+  - Question9_Ours
+  - Question9_Panda
+  - Question9_Renard
+  - Renard_Cerf
+  - Renard_Chat
+  - Renard_Chien
+  - Renard_Elephant
+  - Renard_Oiseau
+  - Renard_Ours
+  - Renard_Panda
+  - Renard_Renard
   - TestNam
   - TriggeredDude
   - Witch
-  assignedIndex: 57
+  assignedIndex: 161
   assignedID: 81348
   assignedDialogue: TestNam
   interactionCount: 0
