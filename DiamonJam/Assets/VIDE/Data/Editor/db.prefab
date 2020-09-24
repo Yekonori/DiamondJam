@@ -43,22 +43,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268dc70b105993846a123be43345df63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileIndex: 62
+  fileIndex: 54
   skinIndex: 2
   loadTag: 
   startID: 0
   curFocusID: 0
-  currentID: 92952
+  currentID: 62046
   autosave: 1
   previewPanning: 0
-  currentDiag: 62
+  currentDiag: 54
   locEdit: 0
   pNodeID: 18
   aNodeID: 2
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: "Qui est le ou la meilleur.e ami.e de Oiseau ?\r"
+    - text: "Tout ce que peux vous dire c'estqu'elle a 3 fils\r mais je sais qu'elle
+        n'est pas si heureuse avec\r leur pr\xE9sence. "
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: 1
@@ -69,107 +70,17 @@ MonoBehaviour:
         x: 301
         y: 63
         width: 30
-        height: 33
+        height: 63
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     ID: 0
     rect:
       serializedVersion: 2
-      x: 280
-      y: 180
+      x: 670
+      y: 260
       width: 348
-      height: 139
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 3
-    s_comment:
-    - text: Ours
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: 3
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 23
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: Cerf
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: -1
-      outActionIndex: 0
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 300
-        y: 87
-        width: 30
-        height: 23
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: Personne
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: -1
-      outActionIndex: 0
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 300
-        y: 111
-        width: 30
-        height: 23
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 1
-    rect:
-      serializedVersion: 2
-      x: 710
-      y: 200
-      width: 348
-      height: 177
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: Mais pas du tout !
-      extraData: ExtraData
-      inputSetIndex: 2
-      outputNodeIndex: 1
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 23
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 3
-    rect:
-      serializedVersion: 2
-      x: 630
-      y: 510
-      width: 348
-      height: 129
+      height: 169
     pTag: 
     expand: 0
     sprite: {fileID: 0}
@@ -178,9 +89,9 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: Comment...
+    - text: En fait elle voulait avoir une fille.
       extraData: ExtraData
-      inputSetIndex: 3
+      inputSetIndex: 1
       outputNodeIndex: -1
       outActionIndex: -1
       showmore: 0
@@ -193,11 +104,11 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    ID: 4
+    ID: 1
     rect:
       serializedVersion: 2
-      x: 1160
-      y: 170
+      x: 1060
+      y: 270
       width: 348
       height: 129
     pTag: 
@@ -206,60 +117,5 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 0
-  S_actionNodes:
-  - pauseHere: 0
-    gameObjectName: GameManager
-    methodName: LoseHealth
-    nameIndex: 10
-    methodIndex: 10
-    paramIndex: 0
-    opts:
-    - '[No method]'
-    - StartQuestion
-    - EndQuestion
-    - StartSwipe
-    - EndSwipe
-    - StartDiscussionCharacter
-    - EndDiscussion
-    - CancelDiscussion
-    - Kill
-    - Spare
-    - LoseHealth
-    - GameOver
-    - GameOverAnimation
-    - GameOverTimeout
-    - get_LevelDifficulty
-    - set_LevelDifficulty
-    nameOpts:
-    - '[No object]'
-    - TextChoices
-    - CharacterManager
-    - Text (TMP)
-    - TextDialogueBox
-    - DialogueChoiceManager
-    - TextTurnRemaining
-    - Feedback_FlashScreen
-    - Character
-    - Feedback_ShakeScreen
-    - GameManager
-    - TextDialogueBox
-    - MaskSelectionManager
-    - Feedback_FlashBackground
-    - DialogueManager
-    param_bool: 0
-    param_string: 
-    param_int: 0
-    param_float: 0
-    rect:
-      serializedVersion: 2
-      x: 1130
-      y: 370
-      width: 200
-      height: 170
-    ID: 2
-    outPlayerIndex: 2
-    outActionIndex: -1
-    more: 0
-    ovrStartNode: -1
-    renameDialogue: 
+  S_actionNodes: []
   S_selNodes: []

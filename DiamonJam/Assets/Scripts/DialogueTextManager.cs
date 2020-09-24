@@ -48,10 +48,11 @@ public class DialogueTextManager : MonoBehaviour
         dialogBoxFeedback.SetTrigger("Feedback");
         nextButton.gameObject.SetActive(false);
         actualText = text.comments[0];
-        textDialog.text = text.comments[0];
+        actualText = actualText.Replace("\r", ""); // zero opti
+        textDialog.text = actualText;
         textDialog.maxVisibleCharacters = 0;
-
-        if(actualText[0] == '(')
+ 
+        if (actualText[0] == '(')
         {
             playerTalk = true;
             textDialog.color = colorTextPlayer;
