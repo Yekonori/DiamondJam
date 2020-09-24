@@ -1537,7 +1537,8 @@ MonoBehaviour:
   dialogueManager: {fileID: 0}
   whereToInstanciate: {fileID: 798502620}
   isChoosingNPC: 1
-  timeToMove: 0.2
+  xOffSet: {x: -40, y: 0, z: 0}
+  timeToMove: 0.4
 --- !u!4 &378162221
 Transform:
   m_ObjectHideFlags: 0
