@@ -20,5 +20,65 @@ MonoBehaviour:
   characterMask: {fileID: 21300000, guid: 89d64d0fd2ef7e34b81352c0ac89f32d, type: 3}
   characterBackground: {fileID: 0}
   characterDescription: 
-  discussionCharacterDatas: []
-  questionDatas: []
+  discussionCharacterDatas:
+  - characterData: {fileID: 11400000, guid: 9e0f6c15c337d324a95cb62ffcf54c92, type: 2}
+    discussionID: Renard_Chien
+    discussionTag: C5-C16-C17
+  - characterData: {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
+    discussionID: Renard_Chat
+    discussionTag: D6
+  - characterData: {fileID: 11400000, guid: 885761552f9994c44b8d89155c27d964, type: 2}
+    discussionID: Renard_Cerf
+    discussionTag: E9-E10-E17-D10
+  - characterData: {fileID: 11400000}
+    discussionID: Renard_Renard
+    discussionTag: F4
+  - characterData: {fileID: 11400000, guid: b5a7c8e17125c1644918bb380ab86f8b, type: 2}
+    discussionID: Renard_Oiseau
+    discussionTag: G4-G15
+  - characterData: {fileID: 11400000, guid: c3698dd96ed920141922bad9ed476b7e, type: 2}
+    discussionID: Renard_Ours
+    discussionTag: H4-H7
+  - characterData: {fileID: 11400000, guid: 277e442620a65304fa91d969abf93cac, type: 2}
+    discussionID: Renard_Elephant
+    discussionTag: I7-I11
+  - characterData: {fileID: 11400000, guid: 2cf2c9860f55980429c78fd75068564a, type: 2}
+    discussionID: Renard_Panda
+    discussionTag: J5-J12
+  questionDatas:
+  - questionID: Question1_Renard
+    questionDifficulty: 1
+    questionTag: F4
+  - questionID: Question2_Renard
+    questionDifficulty: 1
+    questionTag: F5
+  - questionID: Question3_Renard
+    questionDifficulty: 1
+    questionTag: F6
+  - questionID: Question4_Renard
+    questionDifficulty: 1
+    questionTag: F7
+  - questionID: Question5_Renard
+    questionDifficulty: 2
+    questionTag: F9
+  - questionID: Question6_Renard
+    questionDifficulty: 2
+    questionTag: F10
+  - questionID: Question7_Renard
+    questionDifficulty: 2
+    questionTag: F11
+  - questionID: Question8_Renard
+    questionDifficulty: 2
+    questionTag: F12
+  - questionID: Question9_Renard
+    questionDifficulty: 3
+    questionTag: F14
+  - questionID: Question10_Renard
+    questionDifficulty: 3
+    questionTag: F15
+  - questionID: Question11_Renard
+    questionDifficulty: 3
+    questionTag: F16
+  - questionID: Question12_Renard
+    questionDifficulty: 3
+    questionTag: F17
