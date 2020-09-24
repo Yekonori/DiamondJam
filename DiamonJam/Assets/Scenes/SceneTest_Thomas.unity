@@ -6541,6 +6541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ce11af04076e945bd46f6f25cda130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugInterlocutor: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
   turn: 40
   playerHealth: 3
   interogationNumber: 3
@@ -6549,8 +6550,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f0bac4a06d175874a8fe266ffb418000, type: 2}
   - {fileID: 11400000, guid: 9e0f6c15c337d324a95cb62ffcf54c92, type: 2}
   - {fileID: 11400000, guid: 277e442620a65304fa91d969abf93cac, type: 2}
-  - {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
+  - {fileID: 11400000, guid: b5a7c8e17125c1644918bb380ab86f8b, type: 2}
   - {fileID: 11400000, guid: fff697a19c9c0e84581e5b2aca7a7066, type: 2}
+  - {fileID: 11400000, guid: c3698dd96ed920141922bad9ed476b7e, type: 2}
+  - {fileID: 11400000, guid: b10456193a36ab8469c0b170a800956d, type: 2}
   - {fileID: 11400000, guid: 2cf2c9860f55980429c78fd75068564a, type: 2}
   dialogueManager: {fileID: 2075097186}
   swipeManager: {fileID: 378162220}
@@ -6560,8 +6563,6 @@ MonoBehaviour:
   imageGuestPrefab: {fileID: 1120649852}
   imageCurrentMask: {fileID: 1767063365}
   textTurn: {fileID: 658929871}
-  debugInterlocutor: {fileID: 11400000, guid: ddd73e7be30ed7a4bb5dca768dfe1f1c, type: 2}
-  murderPreviousTurn: 0
   murderPanel: {fileID: 1411690319}
   gameOverDialog: GameOverDialog
   gameOverTimeout: GameOverTimeout
