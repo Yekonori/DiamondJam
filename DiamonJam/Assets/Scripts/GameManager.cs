@@ -34,6 +34,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<string> introDialog;
 
+    [Header("Background")]
+    [SerializeField]
+    private Animator fadeBackground;
+    [SerializeField]
+    private Image background;
+    [SerializeField]
+    private Sprite interrogationBackground;
+    [SerializeField]
+    private Sprite discussionBackground;
+
     [Header("Data")]
     [SerializeField]
     List<SO_CharacterData> guestsList;
@@ -192,6 +202,7 @@ public class GameManager : MonoBehaviour
     // ================================================================================================================================== //
     private IEnumerator StartQuestionCoroutine()
     {
+        background.sprite = interrogationBackground;
         swipeManager.InstantiateCharacter(guestsList[0]);
         yield return new WaitForSeconds(2f);
         dialogueManager.OnDialogueEnd += EndQuestion;
@@ -214,12 +225,22 @@ public class GameManager : MonoBehaviour
         if (currentInterogationNumber <= 0) // Plus de question, on passe à la sélection
         {
             dialogueManager.OnDialogueEnd -= EndQuestion;
-            StartSwipe();
+            StartCoroutine(GoToSwipeCoroutine());
         }
         else // Encore des questions 
         {
             StartQuestion();
         }
+    }
+
+    private IEnumerator GoToSwipeCoroutine()
+    {
+        fadeBackground.SetTrigger("Feedback");
+        yield return new WaitForSeconds(2f);
+        background.sprite = discussionBackground;
+        StartSwipe();
+        yield return new WaitForSeconds(1f);
+
     }
     // ================================================================================================================================== //
 
