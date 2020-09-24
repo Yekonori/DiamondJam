@@ -79,12 +79,12 @@ public class DialogueSelectorManager : MonoBehaviour
     // A appelé avant Select question pour ne pas retomber sur les mêmes questions 2 fois
     public void CreateQuestions(SO_CharacterData maskWorn)
     {
-        if(levelDifficulty < mediumDifficultyThreshold)
-            SoundManager.Instance.PlayMusic(easyMusic);
-        else if (levelDifficulty < hardDifficultyThreshold)
+        if (levelDifficulty == 2)
             SoundManager.Instance.PlayMusic(mediumMusic);
-        else
+        else if (levelDifficulty == 3)
             SoundManager.Instance.PlayMusic(hardMusic);
+        else
+            SoundManager.Instance.PlayMusic(easyMusic);
         questionsPool = maskWorn.QuestionDatas.ToList();
     }
 
