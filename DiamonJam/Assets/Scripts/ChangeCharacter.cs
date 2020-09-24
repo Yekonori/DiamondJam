@@ -52,8 +52,13 @@ public class ChangeCharacter : MonoBehaviour
         {
             startPosition = Input.mousePosition.x;
         }
-
-        if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButton(0))
+        {
+            float ratio = Input.mousePosition.x - startPosition;
+            currentPlayer.transform.localEulerAngles = new Vector3(-ratio * 0.01f, 0, 0);
+            //startPosition = Input.mousePosition.x;
+        }
+        else if (Input.GetMouseButtonUp(0))
         {
             endPosition = Input.mousePosition.x;
             //Debug.Log(Mathf.Abs(endPosition - startPosition));
@@ -175,8 +180,9 @@ public class ChangeCharacter : MonoBehaviour
     IEnumerator DestroyCurrentPlayer(bool ToRight, GameObject go)
     {
         float timer = 0f;
-        Vector3 startPosition = go.transform.position;
-        Vector3 endPosition = go.transform.position;
+        float x = 0f;
+        Vector3 startPosition = go.transform.localEulerAngles;
+        Vector3 endPosition = go.transform.localEulerAngles;
         if (ToRight)
         {
             endPosition += xOffSet;
@@ -189,7 +195,9 @@ public class ChangeCharacter : MonoBehaviour
         while (timer < timeToMove)
         {
             timer += Time.deltaTime;
-            go.transform.localEulerAngles = Vector3.Lerp(startPosition, endPosition, timer / timeToMove);
+            x = Mathf.LerpAngle(startPosition.x, endPosition.x, timer / timeToMove);
+            go.transform.transform.localEulerAngles = new Vector3(x, 0, 0);
+            //go.transform.localEulerAngles = Vector3.Lerp(startPosition, endPosition, timer / timeToMove);
             yield return null;
         }
         Destroy(go);
@@ -198,26 +206,28 @@ public class ChangeCharacter : MonoBehaviour
     IEnumerator InstantiateNextPlayer(bool Toright, int currentID)
     {
         float timer = 0f;
-        Transform startPosition = whereToInstanciate;
+        float x = 0f;
+        //Transform startPosition = whereToInstanciate;
 
         if (Toright)
         {
             currentPlayer = Instantiate(players[currentID].CharacterModel, whereToInstanciate);
             currentPlayer.transform.localEulerAngles -= xOffSet;
-            startPosition = currentPlayer.transform;
+            //startPosition = currentPlayer.transform;
 
         }
         else
         {
             currentPlayer = Instantiate(players[currentID].CharacterModel, whereToInstanciate);
             currentPlayer.transform.localEulerAngles += xOffSet;
-            startPosition = currentPlayer.transform;
+            //startPosition = currentPlayer.transform;
         }
-
         while (timer < timeToMove)
         {
             timer += Time.deltaTime;
-            currentPlayer.transform.localEulerAngles = Vector3.Lerp(startPosition.position, whereToInstanciate.localEulerAngles, timer / timeToMove);
+            //Debug.Log(currentPlayer.transform.localEulerAngles);
+            x = Mathf.LerpAngle(currentPlayer.transform.localEulerAngles.x, 0f, timer / timeToMove);
+            currentPlayer.transform.localEulerAngles = new Vector3(x,0,0);//= Vector3.Lerp(currentPlayer.transform.localEulerAngles, Vector3.zero, timer / timeToMove);
             yield return null;
         }
     }

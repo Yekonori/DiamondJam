@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
         currentInterlocutor = characterIntro;
         DrawHUD();
 
+        //StartSwipe();
         dialogueManager.OnDialogueEnd += EndDiscussionIntro;
         DiscussionIntro();
         introDialog.RemoveAt(0);
