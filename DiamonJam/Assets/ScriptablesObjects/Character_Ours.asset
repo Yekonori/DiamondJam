@@ -15,7 +15,8 @@ MonoBehaviour:
   characterName: 
   characterModel: {fileID: 919132149155446097, guid: 9d304734a3b91a24499ff563f4625c80,
     type: 3}
-  characterModelDead: {fileID: 0}
+  characterModelDead: {fileID: 919132149155446097, guid: 9cc22caa6ae759e43bc9bc97ebaa0791,
+    type: 3}
   characterMask: {fileID: 21300000, guid: 6b112ed50626b864eb286028efa62684, type: 3}
   characterBackground: {fileID: 0}
   characterDescription: 
