@@ -15,7 +15,14 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Debug")]
+    [SerializeField]
+    SO_CharacterData debugInterlocutor;
+
+
     [Header("Parameter")]
+    [SerializeField]
+    private List<string> introDialog;
     [SerializeField]
     private int turn = 40;
     [SerializeField]
@@ -50,13 +57,7 @@ public class GameManager : MonoBehaviour
 
     List<Image> imageGuests = new List<Image>();
 
-    [Header("Debug")]
-    [SerializeField]
-    SO_CharacterData debugInterlocutor;
-
-    [SerializeField]
     private bool murderPreviousTurn = false;
-
     //private int currentDiscussionNumber = 2;
     private int currentInterogationNumber = 3;
 
