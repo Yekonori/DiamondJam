@@ -24,7 +24,9 @@ public class DialogueSelectorManager : MonoBehaviour
 
     List<string> playerKnowledge = new List<string>();
 
-
+    [Header("Debug")]
+    [SerializeField]
+    List<QuestionData> questionsPool = new List<QuestionData>();
 
 
     /*public string SelectDiscussion(SO_CharacterData interlocutor)
@@ -68,35 +70,55 @@ public class DialogueSelectorManager : MonoBehaviour
     }
 
 
-
+    // A appelé avant Select question pour ne pas retomber sur les mêmes questions 2 fois
+    public void CreateQuestions(SO_CharacterData maskWorn)
+    {
+        questionsPool = maskWorn.QuestionDatas.ToList();
+    }
 
     public string SelectQuestion(SO_CharacterData maskWorn)
     {
+        QuestionData res;
+        if (questionsPool.Count == 0)
+            CreateQuestions(maskWorn);
+
         AddQuestionCount();
-        for (int i = 0; i < maskWorn.QuestionDatas.Length; i++)
+        for (int i = 0; i < questionsPool.Count; i++)
         {
             for (int j = 0; j < playerKnowledge.Count; j++)
             {
-                if (maskWorn.QuestionDatas[i].QuestionTag == playerKnowledge[j])
+                if (questionsPool[i].QuestionTag == playerKnowledge[j])
                 {
-                    return maskWorn.QuestionDatas[i].QuestionID;
+                    res = questionsPool[i];
+                    questionsPool.RemoveAt(i);
+                    return res.QuestionID;
                 }
             }
         }
         // Si le joueur n'a pas le bon tag, on prend un truc au pif avec la bonne difficulté
         List<QuestionData> questions = new List<QuestionData>();
-        for (int i = 0; i < maskWorn.QuestionDatas.Length; i++)
+        for (int i = 0; i < questionsPool.Count; i++)
         {
-            if (maskWorn.QuestionDatas[i].QuestionDifficulty == levelDifficulty)
+            if (questionsPool[i].QuestionDifficulty == levelDifficulty)
             {
-                questions.Add(maskWorn.QuestionDatas[i]);
+                questions.Add(questionsPool[i]);
             }
         }
 
-        if(questions.Count == 0)
-            return maskWorn.QuestionDatas[Random.Range(0, maskWorn.QuestionDatas.Length - 1)].QuestionID;
-
-        return questions[Random.Range(0, questions.Count - 1)].QuestionID;
+        int rand = 0;
+        if (questions.Count == 0)
+        {
+            rand = Random.Range(0, questionsPool.Count - 1);
+            res = questionsPool[rand];
+            questionsPool.RemoveAt(rand);
+        }
+        else
+        {
+            rand = Random.Range(0, questions.Count - 1);
+            res = questions[rand];
+            questionsPool.RemoveAt(rand);
+        }
+        return res.QuestionID;
     }
 
     private void AddQuestionCount()

@@ -29,7 +29,9 @@ public class ChangeCharacter : MonoBehaviour
     private int currentPlayerId;
     private GameObject currentPlayer;
 
+    [SerializeField]
     private Vector3 xOffSet = new Vector3(0.15f, 0f, 0f);
+
     public float timeToMove = 0.5f;
     #endregion
 
@@ -38,21 +40,13 @@ public class ChangeCharacter : MonoBehaviour
 
     private void Start()
     {
-        //players = new List<Transform>();
-
-        //foreach(Transform transform in playersField.transform)
-        //{
-        //    players.Add(transform);
-        //}
-
         currentPlayerId = 0;
-        //currentPlayer = players[currentPlayerId].gameObject;
     }
 
     private void Update()
     {
         if (!isChoosingNPC) return;
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
         //swipe with mouse
         if (Input.GetMouseButtonDown(0))
         {
@@ -153,18 +147,14 @@ public class ChangeCharacter : MonoBehaviour
 
     public void ChangeChoosingMode(bool b)
     {
-        //Debug.Log("Button push");
         isChoosingNPC = b;
         if (isChoosingNPC)
         {
             chooseNPCPanel.SetActive(true);
-            //dialoguePanel.SetActive(false);
         }
         else
         {
             chooseNPCPanel.SetActive(false);
-           // dialoguePanel.SetActive(true);
-            //dialogueManager.GetComponent<DialogueManager>().StartDialogue("TestNam");
         }
     }
 
@@ -172,6 +162,7 @@ public class ChangeCharacter : MonoBehaviour
     {
         players = list;
         currentPlayerId = 0;
+        if (currentPlayer != null) Destroy(currentPlayer);
         currentPlayer = Instantiate(players[currentPlayerId].CharacterModel, whereToInstanciate);
 
     }
@@ -198,7 +189,7 @@ public class ChangeCharacter : MonoBehaviour
         while (timer < timeToMove)
         {
             timer += Time.deltaTime;
-            go.transform.position = Vector3.Lerp(startPosition, endPosition, timer / timeToMove);
+            go.transform.localEulerAngles = Vector3.Lerp(startPosition, endPosition, timer / timeToMove);
             yield return null;
         }
         Destroy(go);
@@ -212,23 +203,42 @@ public class ChangeCharacter : MonoBehaviour
         if (Toright)
         {
             currentPlayer = Instantiate(players[currentID].CharacterModel, whereToInstanciate);
-            currentPlayer.transform.position -= xOffSet;
+            currentPlayer.transform.localEulerAngles -= xOffSet;
             startPosition = currentPlayer.transform;
 
         }
         else
         {
             currentPlayer = Instantiate(players[currentID].CharacterModel, whereToInstanciate);
-            currentPlayer.transform.position += xOffSet;
+            currentPlayer.transform.localEulerAngles += xOffSet;
             startPosition = currentPlayer.transform;
         }
 
         while (timer < timeToMove)
         {
             timer += Time.deltaTime;
-            currentPlayer.transform.position = Vector3.Lerp(startPosition.position, whereToInstanciate.position, timer / timeToMove);
+            currentPlayer.transform.localEulerAngles = Vector3.Lerp(startPosition.position, whereToInstanciate.localEulerAngles, timer / timeToMove);
             yield return null;
         }
     }
+
+
+
+    public void InstantiateCharacter(SO_CharacterData character)
+    {
+        if(character == null)
+        {
+            return;
+        }
+        if (currentPlayer != null) Destroy(currentPlayer);
+        currentPlayer = Instantiate(character.CharacterModel, whereToInstanciate);
+    }
+
+    public void InstantiateDeadModel(SO_CharacterData character)
+    {
+        if (currentPlayer != null) Destroy(currentPlayer);
+        currentPlayer = Instantiate(character.CharacterModelDead, whereToInstanciate);
+    }
+
     #endregion
 }

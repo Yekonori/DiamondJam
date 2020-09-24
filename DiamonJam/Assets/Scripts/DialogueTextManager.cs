@@ -13,6 +13,10 @@ public class DialogueTextManager : MonoBehaviour
     float intervalLetter = 0.01f;
     [SerializeField]
     float intervalLong = 0.4f;
+    [SerializeField]
+    Color colorTextNormal = Color.white;
+    [SerializeField]
+    Color colorTextPlayer = Color.white;
 
     [SerializeField]
     TextMeshProUGUI textDialog;
@@ -31,7 +35,7 @@ public class DialogueTextManager : MonoBehaviour
 
     Touch touch;
 
-
+    bool playerTalk = false;
 
     public void UpdateNode(VD.NodeData text)
     {
@@ -47,6 +51,17 @@ public class DialogueTextManager : MonoBehaviour
         textDialog.text = text.comments[0];
         textDialog.maxVisibleCharacters = 0;
 
+        if(actualText[0] == '(')
+        {
+            playerTalk = true;
+            textDialog.color = colorTextPlayer;
+        }
+        else
+        {
+            playerTalk = false;
+            textDialog.color = colorTextNormal;
+        }
+
         yield return null; // On attend une frame pour que text mesh pro update bien comme il faut
 
 
@@ -61,12 +76,12 @@ public class DialogueTextManager : MonoBehaviour
                 actualText[textDialog.maxVisibleCharacters - 1] == '?' && actualText[textDialog.maxVisibleCharacters] == ' ' ||
                 actualText[textDialog.maxVisibleCharacters - 1] == '!' && actualText[textDialog.maxVisibleCharacters] == ' ')
             {
-                characterSpeak.Speak(false);
+                CharacterSpeak(false);
                 actualTime = intervalLong;
             }
             else
             {
-                characterSpeak.Speak(true);
+                CharacterSpeak(true);
             }
 
 
@@ -102,7 +117,7 @@ public class DialogueTextManager : MonoBehaviour
     {
         textDialog.maxVisibleCharacters = actualLenght;
         nextButton.gameObject.SetActive(true);
-        characterSpeak.Speak(false);
+        CharacterSpeak(false);
     }
 
 
@@ -124,8 +139,13 @@ public class DialogueTextManager : MonoBehaviour
         return false;
     }
 
-    private void EndNode()
+    private void CharacterSpeak(bool b)
     {
-        
+        if (playerTalk == true)
+        {
+            characterSpeak.Speak(false);
+            return;
+        }
+        characterSpeak.Speak(b);
     }
 }
