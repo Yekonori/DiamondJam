@@ -323,8 +323,8 @@ public class GameManager : MonoBehaviour
 
     public void EndDiscussion()
     {
-        DrawNewTurn();
         turn -= 1;
+        DrawNewTurn();
         if (turn <= guestsList.Count * 2) // Game over au temps
         {
             dialogueManager.OnDialogueEnd -= EndDiscussion;
