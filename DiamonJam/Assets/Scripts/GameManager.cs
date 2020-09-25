@@ -156,13 +156,14 @@ public class GameManager : MonoBehaviour
     // ================================================================================================================================== //
     private void StartNewTurn()
     {
-        turn -= 2;
+        //turn -= 2;
         guestPanel.SetActive(true);
         DrawHUD();
-        if (guestsList.Count == 1)
+        if (guestsList.Count == 0)
         {
             Debug.Log("GG");
-            GameOverAnimation();
+            //GameOverAnimation();
+            YouWin();
         }
         else if (turn < guestsList.Count * 2)
         {
@@ -430,6 +431,8 @@ public class GameManager : MonoBehaviour
     Transform characterPositionGameOver;
     [SerializeField]
     Transform characterPositionDead;
+    [SerializeField]
+    GameObject winPanel;
 
     public void LoseHealth()
     {
@@ -480,4 +483,9 @@ public class GameManager : MonoBehaviour
         dialogueManager.StartDialogue(gameOverTimeout);
     }
 
+    public void YouWin()
+    {
+        winPanel.SetActive(true);
+        StartCoroutine(GameOverCoroutine());
+    }
 }
