@@ -79,6 +79,8 @@ public class GameManager : MonoBehaviour
     [Header("Music")]
     [SerializeField]
     AudioClip introMusic;
+    [SerializeField]
+    AudioClip GGMusic;
 
     [Header("Sound")]
     [SerializeField]
@@ -161,8 +163,6 @@ public class GameManager : MonoBehaviour
         DrawHUD();
         if (guestsList.Count == 0)
         {
-            Debug.Log("GG");
-            //GameOverAnimation();
             YouWin();
         }
         else if (turn < guestsList.Count * 2)
@@ -485,6 +485,7 @@ public class GameManager : MonoBehaviour
 
     public void YouWin()
     {
+        SoundManager.Instance.PlayMusic(GGMusic);
         winPanel.SetActive(true);
         StartCoroutine(GameOverCoroutine());
     }
