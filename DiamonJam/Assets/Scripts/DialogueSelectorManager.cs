@@ -21,7 +21,7 @@ public class DialogueSelectorManager : MonoBehaviour
     private int questionCount;
 
 
-    private int levelDifficulty;
+    private int levelDifficulty = 1;
     public int LevelDifficulty
     {
         get { return levelDifficulty; }
@@ -95,18 +95,6 @@ public class DialogueSelectorManager : MonoBehaviour
             CreateQuestions(maskWorn);
 
         AddQuestionCount();
-        for (int i = 0; i < questionsPool.Count; i++)
-        {
-            for (int j = 0; j < playerKnowledge.Count; j++)
-            {
-                if (questionsPool[i].QuestionTag == playerKnowledge[j])
-                {
-                    res = questionsPool[i];
-                    questionsPool.RemoveAt(i);
-                    return res.QuestionID;
-                }
-            }
-        }
         // Si le joueur n'a pas le bon tag, on prend un truc au pif avec la bonne difficulté
         List<QuestionData> questions = new List<QuestionData>();
         for (int i = 0; i < questionsPool.Count; i++)
@@ -117,24 +105,41 @@ public class DialogueSelectorManager : MonoBehaviour
             }
         }
 
+
+        for (int i = 0; i < questions.Count; i++)
+        {
+            for (int j = 0; j < playerKnowledge.Count; j++)
+            {
+                if (questions[i].QuestionTag == playerKnowledge[j])
+                {
+                    res = questions[i];
+                    questionsPool.Remove(res);
+                    return res.QuestionID;
+                }
+            }
+        }
+
+
         int rand = 0;
         if (questions.Count == 0)
         {
             rand = Random.Range(0, questionsPool.Count - 1);
             res = questionsPool[rand];
-            questionsPool.RemoveAt(rand);
+            questionsPool.Remove(res);
         }
         else
         {
             rand = Random.Range(0, questions.Count - 1);
             res = questions[rand];
-            questionsPool.RemoveAt(rand);
+            questionsPool.Remove(res);
         }
         return res.QuestionID;
     }
 
     private void AddQuestionCount()
     {
+        if (questionCount == 0)
+            levelDifficulty = 1;
         questionCount += 1;
         if (questionCount == mediumDifficultyThreshold)
             levelDifficulty = 2;
