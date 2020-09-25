@@ -75,7 +75,8 @@ public class DialogueTextManager : MonoBehaviour
             if (actualText[textDialog.maxVisibleCharacters - 1] == ',' && actualText[textDialog.maxVisibleCharacters] == ' ' ||
                 actualText[textDialog.maxVisibleCharacters - 1] == '.' && actualText[textDialog.maxVisibleCharacters] == ' ' ||
                 actualText[textDialog.maxVisibleCharacters - 1] == '?' && actualText[textDialog.maxVisibleCharacters] == ' ' ||
-                actualText[textDialog.maxVisibleCharacters - 1] == '!' && actualText[textDialog.maxVisibleCharacters] == ' ')
+                actualText[textDialog.maxVisibleCharacters - 1] == '!' && actualText[textDialog.maxVisibleCharacters] == ' ' ||
+                actualText[textDialog.maxVisibleCharacters - 1] == '*' && actualText[textDialog.maxVisibleCharacters] == ' ')
             {
                 CharacterSpeak(false);
                 actualTime = intervalLong;
